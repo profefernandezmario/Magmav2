@@ -1,0 +1,1753 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Mario R. Fernandez">
+	<meta name="description" content="Showroom de indumentaria deportiva para hombres y mujeres en Resistencia - Chaco">
+	<meta name="keywords"
+		content="indumentaria deportiva, indumentaria, deportiva, deportes, calzas, remeras, short, conjunto deportivo, top, resistencia, showroom, magma fit house, magma, fit, house, magma indumentaria deportiva">
+	<link rel="shortcut icon" href="logos/g_azul_1-01.png" type="image/x-icon">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MAGMA FIT HOUSE</title>
+
+	<!-- Bootstrap -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+		crossorigin="anonymous"></script>
+
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Bungee+Tint&family=Fleur+De+Leah&family=Rubik+Distressed&family=UnifrakturMaguntia&display=swap"
+		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Cantata+One&display=swap" rel="stylesheet">
+
+	<!-- Font Awesome Iconos -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+
+	<!-- Mis estilos -->
+	<link rel="stylesheet" href="estilosAjustados.css"> <!-- deepseek -->
+	<link rel="stylesheet" href="header-responsive.css">  <!-- deepseek -->
+	<link rel="stylesheet" href="grid-responsive.css">  <!-- deepseek 4 tarjetas en grandes y 2 en pequeñas -->
+
+	<link rel="stylesheet" href="uiverse.css"> <!-- para el icono animado de IG al pie -->
+	<link rel="stylesheet" href="enviarPedido.css"> <!-- para el boton de enviar pedido al WS -->
+
+	<!-- icono letra G -->
+	<!-- <link rel="apple-touch-icon" sizes="180x180" href="favicon_G/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon_G/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon_G/favicon-16x16.png">
+	<link rel="manifest" href="favicon_io/site.webmanifest"> -->
+
+	<!-- icono rayo verde -->
+	<link rel="apple-touch-icon" sizes="180x180" href="favicon_rayo/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon_rayo/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon_rayo/favicon-16x16.png">
+	<link rel="manifest" href="favicon_io/site.webmanifest">
+
+</head>
+
+<body class="container-fluid px-0 px-sm-0 mx-0">
+
+<!-- Header Rediseñado -->
+<header class="custom-header">
+  <div class="header-top">
+    
+    <!-- ===== VERSIÓN DESKTOP ===== -->
+    <div class="header-desktop">
+      <div class="container">
+        <!-- Logo -->
+        <div class="logo-desktop">
+          <a href="#">
+            <img src="logos/MAGMa_verde_1-01.png" alt="MAGMA Indumentaria Deportiva" class="img-fluid">
+          </a>
+        </div>
+
+        <!-- Botones de Contacto -->
+        <div class="buttons-desktop">
+          <a href="http://instagram.com/magma_fit_house" target="_blank"
+            class="contact-btn-desktop btn-instagram-desktop" title="Síguenos en Instagram">
+            <i class="fab fa-instagram"></i>
+            <span>Instagram</span>
+          </a>
+
+          <a href="https://wa.me/5493624003295?text=Hola%20quiero%20más%20información" target="_blank"
+            class="contact-btn-desktop btn-whatsapp-desktop" title="Chateá por WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+            <span>WhatsApp</span>
+          </a>
+
+          <button class="contact-btn-desktop btn-payment-desktop" type="button" title="Transferencias - Alias: MF.INDUMENTARIAS">
+            <i class="fas fa-money-bill-wave"></i>
+            <span>Transferencias</span>
+          </button>
+        </div>
+
+        <!-- Carrito -->
+        <div class="cart-desktop">
+          <button class="cart-btn-desktop position-relative" title="Ver carrito de compras">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Carrito</span>
+            <span id="carrito-contador-desktop"
+              class="position-absolute top-0 start-100 translate-middle badge badge-cart-desktop rounded-pill">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== VERSIÓN MÓVIL ===== -->
+    <div class="header-mobile">
+      <div class="container">
+        <!-- Fila Superior: Logo + Botones -->
+        <div class="mobile-header-top">
+          <!-- Logo -->
+          <div class="logo-mobile">
+            <a href="#">
+              <img src="logos/MAGMa_verde_1-01.png" alt="MAGMA Indumentaria Deportiva" class="img-fluid">
+            </a>
+          </div>
+
+          <!-- Botones en Fila -->
+          <div class="mobile-buttons-row">
+            <a href="http://instagram.com/magma_fit_house" target="_blank"
+              class="contact-btn-mobile btn-instagram-mobile" title="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="https://wa.me/5493624003295?text=Hola%20quiero%20más%20información" target="_blank"
+              class="contact-btn-mobile btn-whatsapp-mobile" title="WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+
+            <button class="contact-btn-mobile btn-payment-mobile" type="button" title="Transferencias">
+              <i class="fas fa-money-bill-wave"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Fila Inferior: Carrito Completo -->
+        <div class="mobile-cart-row">
+          <button class="cart-btn-mobile position-relative" title="Ver carrito de compras">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Carrito de Compras</span>
+            <span id="carrito-contador-mobile"
+              class="position-absolute top-0 start-100 translate-middle badge badge-cart-mobile rounded-pill">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</header>
+<!-- Fin Header Rediseñado -->
+
+	<main class="container-fluid px-0 px-sm-0 mx-0 fondoGradiente">
+
+		<!-- SEPARADOR DE CATEGORIA ACCESORIOS -->
+		<span id="Accesorios"></span>
+		<section class="container my-0">
+			<!-- <img src="logos/rayos azul-verde-01-01.png" alt="rayos azules y verdes" style="width: 80%; "> -->
+			<h2 class="text-center text-bg-warning py-3 cantata-one-regular">ACCESORIOS </h2>
+			<!-- lilita-one-regular -->
+
+			<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+				<div class="col">
+					<div class="card h-100  border-warning rounded-5 sombraTarjeta">
+						<img src="media/accesorios/bolso-deportivo-gde.jpeg" class="card-img-top articulo" alt="BOLSO">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">BOLSO DEPORTIVO</h5>
+							<p><span class="badge bg-dark">GRANDE</span></p>
+							<p><span class="badge bg-info">Color: BEIGE</span></p>
+							<p class="text-success fw-bold fs-5">$26.000</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20BOXER"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Bolso Deportivo', 26000)" class="botonAgregarAlCarrito"
+								class="botonAgregarAlCarrito"> Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100  border-warning rounded-5 sombraTarjeta">
+						<img src="media/accesorios/bombilla_decorada_personajes.jpg" class="card-img-top articulo"
+							alt="Bombilla decorada">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">BOMBILLA DECORADA</h5>
+							<p><span class="badge bg-dark">---</span></p>
+							<p><span class="badge bg-info">Color: VARIOS</span></p>
+							<p class="text-success fw-bold fs-5">$5.000</p>
+							<button onclick="agregarAlCarrito('Bombilla decorada', 5000)" class="botonAgregarAlCarrito"
+								class="botonAgregarAlCarrito"> Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100  border-warning rounded-5 sombraTarjeta">
+						<img src="media/accesorios/collage_luz_led.png" class="card-img-top articulo"
+							alt="Luz led para bombilla">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">LUZ LED P/BOMBILLA</h5>
+							<p><span class="badge bg-dark">----</span></p>
+							<p><span class="badge bg-info">Color: VARIOS</span></p>
+							<p class="text-success fw-bold fs-5">$6.000</p>
+							<button onclick="agregarAlCarrito('luz led bombilla', 6000)" class="botonAgregarAlCarrito">
+								Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100  border-warning rounded-5 sombraTarjeta">
+						<img src="media/accesorios/collage_promo_luz_bombilla.png" class="card-img-top articulo"
+							alt="Promo Luz led y bombilla">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">PROMO LUZ LED Y BOMBILLA</h5>
+							<p><span class="badge bg-dark">----</span></p>
+							<p><span class="badge bg-info">Color: VARIOS</span></p>
+							<p class="text-success fw-bold fs-5">$10.000</p>
+							<button onclick="agregarAlCarrito('Promo luz led y bombilla', 10000)"
+								class="botonAgregarAlCarrito"> Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100  border-warning rounded-5 sombraTarjeta">
+						<img src="media/accesorios/coletas.jpg" class="card-img-top articulo" alt="gomita p/cabello">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">GOMITA P/CABELLO</h5>
+							<p><span class="badge bg-dark">----</span></p>
+							<p><span class="badge bg-info">Color: VARIOS</span></p>
+							<p class="text-success fw-bold fs-5">$300</p>
+							<button onclick="agregarAlCarrito('Gomita p/cabello', 300)" class="botonAgregarAlCarrito">
+								Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100  border-warning rounded-5 sombraTarjeta">
+						<img src="media/accesorios/muñequera_deportiva.jpg" class="card-img-top articulo"
+							alt="Muñequera deportiva">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">MUÑEQUERA DEPORTIVA</h5>
+							<p><span class="badge bg-dark">----</span></p>
+							<p><span class="badge bg-info">Color: Blanco / Negro</span></p>
+							<p class="text-success fw-bold fs-5">$7.000</p>
+							<button onclick="agregarAlCarrito('Muñequera deportiva', 7000)"
+								class="botonAgregarAlCarrito"> Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100  border-warning rounded-5 sombraTarjeta">
+						<img src="media/accesorios/muñequera_medica.jpg" class="card-img-top articulo"
+							alt="Muñequera medica">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">MUÑEQUERA MEDICA</h5>
+							<p><span class="badge bg-dark">----</span></p>
+							<p><span class="badge bg-info">Color: Azul</span></p>
+							<p class="text-success fw-bold fs-5">$5.000</p>
+							<button onclick="agregarAlCarrito('Muñequera medica', 5000)" class="botonAgregarAlCarrito">
+								Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100  border-warning rounded-5 sombraTarjeta">
+						<img src="media/accesorios/tobillera.jpg" class="card-img-top articulo" alt="Tobillera medica">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">TOBILLERA MEDICA</h5>
+							<p><span class="badge bg-dark">----</span></p>
+							<p><span class="badge bg-info">Color: Azul</span></p>
+							<p class="text-success fw-bold fs-5">$5.000</p>
+							<button onclick="agregarAlCarrito('Tobillera medica', 5000)" class="botonAgregarAlCarrito">
+								Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+
+		<!-- SEPARADOR DE CATEGORIA LENCERIA -->
+		<span id="Lenceria"></span>
+		<section class="container my-4">
+			<h2 class="text-center text-bg-warning py-2 cantata-one-regular">LENCERÍA</h2>
+			<!-- lilita-one-regular -->
+
+			<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/hombres/boxer_varios.jpg" class="card-img-top articulo" alt="BOXER">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">BOXER</h5>
+							<p><span class="badge bg-dark">Talle: L / XL / 2XL / 3XL / 4XL</span></p>
+							<p><span class="badge bg-info">Color: VARIOS</span></p>
+							<p class="text-success fw-bold fs-5">$4.000</p>
+							<button onclick="agregarAlCarrito('Boxer x1', 4000)" class="botonAgregarAlCarrito"> Agregar
+								al
+								carrito...</button><br><br>
+							<!-- icono de promo -->
+							<img src="media/promo.svg" alt="icono de promocion">
+							<!-- icono de promo -->
+							<p class="text-success fw-bold fs-5">2 x $7.000</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20BOXER"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Boxer x2', 7000)" class="botonAgregarAlCarrito"> Agregar
+								al carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100  border-warning rounded-5 sombraTarjeta">
+						<img src="media/accesorios/boxer_niños.jpg" class="card-img-top articulo" alt="Boxer niño">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">BOXER NIÑO</h5>
+							<p><span class="badge bg-dark">10-18</span></p>
+							<p><span class="badge bg-info">Color: VARIOS</span></p>
+							<p class="text-success fw-bold fs-5">$2.500</p>
+							<button onclick="agregarAlCarrito('Boxer niño', 2500)" class="botonAgregarAlCarrito">
+								Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/BOXER DAMA.jpg" class="card-img-top articulo" alt="BOXER DAMA">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">BOXER DAMA</h5>
+							<p><span class="badge bg-dark">Talle: -----</span></p>
+							<p><span class="badge bg-info">Color: VARIOS</span></p>
+							<p class="text-success fw-bold fs-5">$4.000</p>
+							<button onclick="agregarAlCarrito('Boxer Dama x 1', 4000)" class="botonAgregarAlCarrito">
+								Agregar al
+								carrito...</button>
+							<br><br>
+							<!-- icono de promo -->
+							<img src="media/promo.svg" alt="icono de promocion">
+							<!-- icono de promo -->
+							<p class="text-success fw-bold fs-5">4 x $15.000</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20BOXER%20DAMA"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Boxer Dama x 4', 15000)" class="botonAgregarAlCarrito">
+								Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/accesorios/collage_colaless_v2.png" class="card-img-top articulo"
+							alt="COLALESS">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">COLALESS</h5>
+							<p><span class="badge bg-dark">Talle: -----</span></p>
+							<p><span class="badge bg-info">Color: VARIOS</span></p>
+							<p class="text-success fw-bold fs-5">$4.000</p>
+							<button onclick="agregarAlCarrito('Colaless x 1', 4000)" class="botonAgregarAlCarrito">
+								Agregar al
+								carrito...</button>
+							<br><br>
+							<!-- icono de promo -->
+							<img src="media/promo.svg" alt="icono de promocion">
+							<!-- icono de promo -->
+							<p class="text-success fw-bold fs-5">4 x $15.000</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20COLALESS"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Colales x 4', 15000)" class="botonAgregarAlCarrito">
+								Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/accesorios/media-antidesl-cortas.png" class="card-img-top articulo"
+							alt="MEDIAS CORTAS">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">MEDIAS ANTI-DESLIZANTES CORTAS
+							</h5>
+							<p><span class="badge bg-dark">Talle: ----</span></p>
+							<p><span class="badge bg-info">Color: VARIOS</span></p>
+							<p class="text-success fw-bold fs-5">c/u $3.500</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20MEDIAS%20ANTI-DESLIZANTES"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Media Anti-Desliz. corta x 1', 3500)"
+								class="botonAgregarAlCarrito"> Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/accesorios/media-antidesl.png" class="card-img-top articulo"
+							alt="MEDIAS CORTAS">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">MEDIAS ANTI-DESLIZANTES LARGAS
+							</h5>
+							<p><span class="badge bg-dark">Talle: ----</span></p>
+							<p><span class="badge bg-info">Color: VARIOS</span></p>
+							<p class="text-success fw-bold fs-5">c/u $3.500</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20MEDIAS%20ANTI-DESLIZANTES"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Media Anti-Desliz. Larga x 1', 3500)"
+								class="botonAgregarAlCarrito"> Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/accesorios/medias_antidesliz_niños.jpg" class="card-img-top articulo"
+							alt="MEDIAS ANTIDESLIZANTES NIÑOS">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">MEDIAS ANTI-DESLIZANTES NIÑOS
+							</h5>
+							<p><span class="badge bg-dark">Talle: ----</span></p>
+							<p><span class="badge bg-info">Color: VARIOS</span></p>
+							<p class="text-success fw-bold fs-5">c/u $3.500</p>
+							<button onclick="agregarAlCarrito('Medias Anti-Desliz. niños x 1', 3500)"
+								class="botonAgregarAlCarrito"> Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/accesorios/medias-h-cortas.png" class="card-img-top articulo"
+							alt="MEDIAS CORTAS">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">MEDIAS CORTAS</h5>
+							<p><span class="badge bg-dark">Talle: ----</span></p>
+							<p><span class="badge bg-info">Color: VARIOS</span></p>
+							<p class="text-success fw-bold fs-5">c/u $3.500</p>
+							<button onclick="agregarAlCarrito('Medias cortas x 1p', 3500)"
+								class="botonAgregarAlCarrito"> Agregar al
+								carrito...</button> <br><br>
+							<!-- icono de promo -->
+							<img src="media/promo.svg" alt="icono de promocion">
+							<!-- icono de promo -->
+							<p class="text-success fw-bold fs-5">2 pares x $5.000</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20MEDIAS%20CORTAS"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Medias cortas x 2p', 5000)"
+								class="botonAgregarAlCarrito"> Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/accesorios/medias-invisibles.jpeg" class="card-img-top articulo"
+							alt="MEDIAS INVISIBLES">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">MEDIAS INVISIBLES</h5>
+							<p><span class="badge bg-dark">Talle: 35-41</span></p>
+							<p><span class="badge bg-info">Color: FANTASIA</span></p>
+							<p class="text-success fw-bold fs-5">$3.500</p>
+							<button onclick="agregarAlCarrito('Medias Invisibles x 1p', 3500)"
+								class="botonAgregarAlCarrito"> Agregar al
+								carrito...</button> <br><br>
+
+							<!-- icono de promo -->
+							<img src="media/promo.svg" alt="icono de promocion">
+							<!-- icono de promo -->
+							<p class="text-success fw-bold fs-5">2 pares x $5.000</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20MEDIAS%20INVISIBLES"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Medias Invisibles x 2p', 5000)"
+								class="botonAgregarAlCarrito"> Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/accesorios/medias_niños.jpg" class="card-img-top articulo" alt="MEDIAS NIÑOS">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">MEDIAS NIÑOS</h5>
+							<p><span class="badge bg-dark">Talle: ---</span></p>
+							<p><span class="badge bg-info">Color: VARIOS</span></p>
+							<p class="text-success fw-bold fs-5">$3.500</p>
+							<button onclick="agregarAlCarrito('Medias niños x 1p', 3500)" class="botonAgregarAlCarrito">
+								Agregar al
+								carrito...</button>
+							<br><br>
+
+							<!-- icono de promo -->
+							<img src="media/promo.svg" alt="icono de promocion">
+							<!-- icono de promo -->
+							<p class="text-success fw-bold fs-5">2 pares x $5.000</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20MEDIAS%20NIÑOS"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Medias niños x 2p', 5000)" class="botonAgregarAlCarrito">
+								Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/accesorios/medias_soquete_amanecer.jpg" class="card-img-top articulo"
+							alt="MEDIAS SOQUETE AMANECER">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">MEDIAS SOQUETE AMANECER</h5>
+							<p><span class="badge bg-dark">Talle: ---</span></p>
+							<p><span class="badge bg-info">Color: VARIOS</span></p>
+							<p class="text-success fw-bold fs-5">$3.500</p>
+							<button onclick="agregarAlCarrito('Medias soquete x 1p', 3500)"
+								class="botonAgregarAlCarrito"> Agregar al
+								carrito...</button> <br><br>
+
+							<!-- icono de promo -->
+							<img src="media/promo.svg" alt="icono de promocion"> <!-- icono de promo -->
+							<p class="text-success fw-bold fs-5">2 pares x $5.000</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20MEDIAS%20SOQUETE%20AMANECER"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Medias soquete x 2p', 5000)"
+								class="botonAgregarAlCarrito"> Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/accesorios/medias_tenis_amanecer.jpg" class="card-img-top articulo"
+							alt="MEDIAS TENIS AMANECER">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">MEDIAS TENIS AMANECER</h5>
+							<p><span class="badge bg-dark">Talle: ---</span></p>
+							<p><span class="badge bg-info">Color: VARIOS</span></p>
+							<p class="text-success fw-bold fs-5">$3.500</p>
+							<button onclick="agregarAlCarrito('Medias tenis Amanecer x 1p', 3500)"
+								class="botonAgregarAlCarrito"> Agregar al
+								carrito...</button> <br><br>
+							<!-- icono de promo -->
+							<img src="media/promo.svg" alt="icono de promocion">
+							<!-- icono de promo -->
+							<p class="text-success fw-bold fs-5">2 pares x $5.000</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20MEDIAS%20TENIS%20AMANECER"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Medias tenis Amanecer x 2p', 5000)"
+								class="botonAgregarAlCarrito"> Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/accesorios/medias-tenis.jpeg" class="card-img-top articulo" alt="MEDIAS TENIS">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">MEDIAS TENIS</h5>
+							<p><span class="badge bg-dark">Talle: ---</span></p>
+							<p><span class="badge bg-info">Color: VARIOS</span></p>
+							<p class="text-success fw-bold fs-5">$3.500</p>
+							<button onclick="agregarAlCarrito('Medias tenis x 1p', 3500)" class="botonAgregarAlCarrito">
+								Agregar al
+								carrito...</button>
+							<br><br>
+							<!-- icono de promo -->
+							<img src="media/promo.svg" alt="icono de promocion"> <!-- icono de promo -->
+							<p class="text-success fw-bold fs-5">2 pares x $5.000</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20MEDIAS%20TENIS"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Medias tenis x 2p', 5000)" class="botonAgregarAlCarrito">
+								Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/accesorios/medias_termicas.jpg" class="card-img-top articulo"
+							alt="MEDIAS TERMICAS">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">MEDIAS TERMICAS</h5>
+							<p><span class="badge bg-dark">Talle: ----</span></p>
+							<p><span class="badge bg-info">Color: VARIOS</span></p>
+							<p class="text-success fw-bold fs-5">$3.500</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20MEDIAS%20TERMICAS"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Medias térmicas x 1p', 3500)"
+								class="botonAgregarAlCarrito"> Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/TOP_ALO_AZUL.jpg" class="card-img-top articulo" alt="TOP ALO">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">TOP ALO AZUL</h5>
+							<p><span class="badge bg-dark">Talle: 3</span></p>
+							<p><span class="badge bg-info">Color: AZUL</span></p>
+							<p class="text-success fw-bold fs-5">$9.000</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20CONJUNTO%20ALO%20POLLERA"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Top ALO Azul - T3', 9000)" class="botonAgregarAlCarrito">
+								Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/TOP DLIRIO.jpg" class="card-img-top articulo" alt="TOP DLIRIO ">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">TOP DLIRIO</h5>
+							<p><span class="badge bg-dark">Talle: 5</span></p>
+							<p><span class="badge bg-info">Color: GRIS</span></p>
+							<p class="text-success fw-bold fs-5">$9.000</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20TOP%20DLIRIO"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Top Dlirio - gris', 9000)" class="botonAgregarAlCarrito">
+								Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/accesorios/top_deportivo_morley.jpg" class="card-img-top articulo"
+							alt="TOP DEPORTIVO MORLEY">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">TOP DEPORTIVO MORLEY</h5>
+							<p><span class="badge bg-dark">Talle: M-XL</span></p>
+							<p><span class="badge bg-info">Color: NEGRO Y BCO</span></p>
+							<p class="text-success fw-bold fs-5">$7.500</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20TOP%20DEPORTIVO%20MORLEY"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Top deportivo Morley', 7500)"
+								class="botonAgregarAlCarrito"> Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/TOP NIKE.jpg" class="card-img-top articulo" alt="TOP NIKE ">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">TOP NIKE </h5>
+							<p><span class="badge bg-dark">Talle: 3 / 4 / 5</span></p>
+							<p><span class="badge bg-info">Color: VARIOS</span></p>
+							<p class="text-success fw-bold fs-5">$7.500</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20TOP%20NIKE"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Top Nike', 7500)" class="botonAgregarAlCarrito"> Agregar
+								al
+								carrito...</button><br><br>
+							<!-- icono de promo -->
+							<img src="media/promo.svg" alt="icono de promocion"> <!-- icono de promo -->
+							<p class="text-success fw-bold fs-5">2 x $12.000</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20TOP%20NIKE"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('top Nike x 2u', 12000)" class="botonAgregarAlCarrito">
+								Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/TOP SEXY beige.jpg" class="card-img-top articulo" alt="TOP SEXY">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">TOP SEXY</h5>
+							<p><span class="badge bg-dark">Talle: 5</span></p>
+							<p><span class="badge bg-info">Color: BEIGE</span></p>
+							<p class="text-success fw-bold fs-5">$7.500</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20TOP%20SEXY"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Top Sexy', 7500)" class="botonAgregarAlCarrito"> Agregar
+								al carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/accesorios/VEDETINA.jpg" class="card-img-top articulo" alt="VEDETINA">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">VEDETINA</h5>
+							<p><span class="badge bg-dark">Talle: -----</span></p>
+							<p><span class="badge bg-info">Color: VARIOS</span></p>
+							<p class="text-success fw-bold fs-5">$4.000</p>
+							<button onclick="agregarAlCarrito('Vedetina x 1u', 4000)" class="botonAgregarAlCarrito">
+								Agregar al
+								carrito...</button>
+							<br><br>
+							<!-- icono de promo -->
+							<img src="media/promo.svg" alt="icono de promocion"> <!-- icono de promo -->
+							<p class="text-success fw-bold fs-5">4 x $15.000</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20VEDETINA"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Vedetina x 4u', 15000)" class="botonAgregarAlCarrito">
+								Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/accesorios/VEDETINA PARA SEÑORAS.jpg" class="card-img-top articulo"
+							alt="VEDETINA PARA SEÑORAS">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">VEDETINA PARA SEÑORAS</h5>
+							<p><span class="badge bg-dark">Talle: XL / 3XL</span></p>
+							<p><span class="badge bg-info">Color: VARIOS</span></p>
+							<p class="text-success fw-bold fs-5">$4.000</p>
+							<button onclick="agregarAlCarrito('Vedetina señoras x 1u', 4000)"
+								class="botonAgregarAlCarrito"> Agregar al
+								carrito...</button> <br><br>
+							<!-- icono de promo -->
+							<img src="media/promo.svg" alt="icono de promocion"> <!-- icono de promo -->
+							<p class="text-success fw-bold fs-5">4 x $15.000</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20VEDETINA%20PARA%20SE%C3%91ORAS"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Vedetina señoras x 4u', 15000)"
+								class="botonAgregarAlCarrito"> Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+		</section>
+
+		<!-- SEPARADOR DE CATEGORIA  ROPA DEPORTIVA  -->
+		<span id="RopaDeportiva"></span>
+		<section class="container my-4">
+			<h2 class="text-center text-bg-primary py-2 cantata-one-regular">ROPA DEPORTIVA</h2>
+			<!-- lilita-one-regular -->
+			<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/calza_3_4.jpg" class="card-img-top articulo" alt="CALZA 3/4">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">CALZA 3/4</h5>
+							<p><span class="badge bg-dark">Talle: 5</span></p>
+							<p><span class="badge bg-info">Color: GRIS</span></p>
+							<p class="text-success fw-bold fs-5">$12.000</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20CALZA%203%2F4"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Calza 3/4 - gris', 12000)" class="botonAgregarAlCarrito">
+								Agregar al
+								carrito...</button>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/calza_biker_combinada.jpg" class="card-img-top articulo"
+							alt="CALZA BIKER COMBINADA">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">CALZA BIKER COMBINADA</h5>
+							<p><span class="badge bg-dark">Talle: 1/ 4</span></p>
+							<p><span class="badge bg-info">Color: NEGRO C/LILA / NEGRO C/FUCSIA / NEGRO
+									C/AZUL</span>
+							</p>
+							<p class="text-success fw-bold fs-5">$12.000</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20CALZA%20C%2FBIKER%20COMBINADA"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('CALZA BIKER COMBINADA - T1/4 - VARIOS', 12000)"
+								class="botonAgregarAlCarrito">Agregar
+								al carrito...</button>
+
+						</div>
+					</div>
+				</div>
+
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/CALZA CBOLSILLO ADIDAS talle 4.jpg" class="card-img-top articulo"
+							alt="CALZA C/BOLSILLO ADIDAS">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">CALZA C/BOLSILLO ADIDAS</h5>
+							<p><span class="badge bg-dark">Talle: 4</span></p>
+							<p><span class="badge bg-info">Color: NEGRO</span></p>
+							<p class="text-success fw-bold fs-5">$15.750</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20CALZA%20C%2FBOLSILLO%20ADIDAS"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('CALZA C/BOLSILLO ADIDAS - T4 - Negro', 15750)"
+								class="botonAgregarAlCarrito">Agregar
+								al carrito...</button>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/CALZA CBOLSILLO ADIDAS talle5.jpg" class="card-img-top articulo"
+							alt="CALZA C/BOLSILLO ADIDAS">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">CALZA C/BOLSILLO ADIDAS</h5>
+							<p><span class="badge bg-dark">Talle: 5</span></p>
+							<p><span class="badge bg-info">Color: NEGRO</span></p>
+							<p class="text-success fw-bold fs-5">$15.750</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20CALZA%20C%2FBOLSILLO%20ADIDAS"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('CALZA C/BOLSILLO ADIDAS - T5 - Negro', 15750)"
+								class="botonAgregarAlCarrito">Agregar
+								al carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/CALZA CHUPIN gris.jpg" class="card-img-top articulo" alt="CALZA CHUPIN">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">CALZA CHUPIN</h5>
+							<p><span class="badge bg-dark">Talle: 2</span></p>
+							<p><span class="badge bg-info">Color: GRIS</span></p>
+							<p class="text-success fw-bold fs-5">$12.000</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20CALZA%20CHUPIN"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('CALZA Chupin - T2 - gris', 12000)"
+								class="botonAgregarAlCarrito"> Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/calza_chupin_adidas.jpg" class="card-img-top articulo"
+							alt="CALZA CHUPIN ADIDAS">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">CALZA CHUPIN ADIDAS</h5>
+							<p><span class="badge bg-dark">Talle: 3</span></p>
+							<p><span class="badge bg-info">Color: NEGRO</span></p>
+							<p class="text-success fw-bold fs-5">$16.000</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20CALZA%20CHUPIN%20ADIDAS"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('CALZA Chupin Adidas- T3 - gris', 16000)"
+								class="botonAgregarAlCarrito">Agregar
+								al carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/calza_corta_combinada_nike.jpg" class="card-img-top articulo"
+							alt="CALZA CORTA COMBINADA NIKE">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">CALZA CORTA COMBINADA</h5>
+							<p><span class="badge bg-dark">Talle: 4 / 5</span></p>
+							<p><span class="badge bg-info">Color: VARIOS</span></p>
+							<p class="text-success fw-bold fs-5">$12.000</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20CALZA%20CORTA%20COMBINADA"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('CALZA Corta Combinada NIKE- T4/5 - Varios', 12000)"
+								class="botonAgregarAlCarrito">Agregar
+								al carrito...</button>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/calza_larga_azul.jpg" class="card-img-top articulo" alt="CALZA LARGA">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">CALZA LARGA</h5>
+							<p><span class="badge bg-dark">Talle: L</span></p>
+							<p><span class="badge bg-info">Color: AZUL</span></p>
+							<p class="text-success fw-bold fs-5">$18.000</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20CALZA%20LARGA"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('CALZA Larga - L - Azul', 18000)"
+								class="botonAgregarAlCarrito"> Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/calza_liza_negra.jpg" class="card-img-top articulo"
+							alt="CALZA LISA CHUPIN">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">CALZA LISA CHUPIN</h5>
+							<p><span class="badge bg-dark">Talle: 3</span></p>
+							<p><span class="badge bg-info">Color: NEGRO</span></p>
+							<p class="text-success fw-bold fs-5">$12.000</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20CALZA%20LISA%20CHUPIN"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('CALZA Lisa Chupin - T3 - Negro', 12000)"
+								class="botonAgregarAlCarrito">Agregar
+								al carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/calzas_oxford.jpg" class="card-img-top articulo" alt="CALZA OXFORD">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">CALZA OXFORD</h5>
+							<p><span class="badge bg-dark">Talle: S / M / L</span></p>
+							<p><span class="badge bg-info">Color: AZUL / MARRON / CELESTE</span></p>
+							<p class="text-success fw-bold fs-5">$19.500</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20CALZA%20OXFORD"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('CALZA Oxford', 19500)" class="botonAgregarAlCarrito">
+								Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/calza_oxford_gris_negra.jpg" class="card-img-top articulo"
+							alt="CALZA OXFORD GRIS/NEGRA">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">CALZA OXFORD</h5>
+							<p><span class="badge bg-dark">Talle: 3</span></p>
+							<p><span class="badge bg-info">Color: NEGRA</span></p>
+							<p class="text-success fw-bold fs-5">$15.000</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20CALZA%20OXFORD%20GRIS%2FNEGRA"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('CALZA Oxford', 15000)" class="botonAgregarAlCarrito">
+								Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/calza_lycra_corta.jpg" class="card-img-top articulo"
+							alt="CALZA LYCRA CORTA">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">CALZA LYCRA CORTA</h5>
+							<p><span class="badge bg-dark">Talle: 4</span></p>
+							<p><span class="badge bg-info">Color: VERDE</span></p>
+							<p class="text-success fw-bold fs-5">$12.000</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20CALZA%20LYCRA%20CORTA"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('CALZA Lycra corta - T4 - Verde', 12000)"
+								class="botonAgregarAlCarrito">Agregar
+								al carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/calza_corta_negra.jpg" class="card-img-top articulo" alt="CALZA CORTA">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">CALZA CORTA</h5>
+							<p><span class="badge bg-dark">Talle: 6</span></p>
+							<p><span class="badge bg-info">Color: NEGRO</span></p>
+							<p class="text-success fw-bold fs-5">$8.000</p>
+							<button onclick="agregarAlCarrito('CALZA corta - T6 - Negro', 8000)"
+								class="botonAgregarAlCarrito">Agregar
+								al carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/calza_corta_gris_amarillo.jpg" class="card-img-top articulo"
+							alt="CALZA BIKER">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">CALZA BIKER</h5>
+							<p><span class="badge bg-dark">Talle: 3</span></p>
+							<p><span class="badge bg-info">Color: GRIS</span></p>
+							<p class="text-success fw-bold fs-5">$8.000</p>
+							<button onclick="agregarAlCarrito('Calza biker - T3 - Gris', 8000)"
+								class="botonAgregarAlCarrito">Agregar
+								al carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/CONJ LYCRA CALZA Y TOP.jpg" class="card-img-top articulo"
+							alt="CONJUNTO LYCRA CALZA Y TOP">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">CONJUNTO LYCRA CALZA Y TOP
+							</h5>
+							<p><span class="badge bg-dark">Talle: 6</span></p>
+							<p><span class="badge bg-info">Color: NEGRO</span></p>
+							<p class="text-success fw-bold fs-5">$18.750</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20CONJUNTO%20LYCRA%20CALZA%20Y%2	0TOP"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('conjunto Lycra Calza y Top - T6 - Negro', 18750)"
+								class="botonAgregarAlCarrito">Agregar al carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/conjunto_pollera_y_top.jpg" class="card-img-top articulo"
+							alt="CONJUNTO TOP Y POLLERA">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">CONJUNTO TOP Y POLLERA</h5>
+							<p><span class="badge bg-dark">Talle: 4</span></p>
+							<p><span class="badge bg-info">Color: NEGRO</span></p>
+							<p class="text-success fw-bold fs-5">$23.000</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20CONJ%20POLLERA%20Y%20TOP"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Conj. Pollera y Top - T4 - Negro', 23000)"
+								class="botonAgregarAlCarrito">Agregar
+								al carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/top_calza_l.jpg" class="card-img-top articulo"
+							alt="CONJUNTO TOP Y CALZA LARGA">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">CONJUNTO TOP Y CALZA LARGA
+							</h5>
+							<p><span class="badge bg-dark">XL</span></p>
+							<p><span class="badge bg-info">Color: GRIS</span></p>
+							<p class="text-success fw-bold fs-5">$21.000</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20CONJUNTO%20TOP%20Y%20CALZA%20LARGA"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Top y Calza Larga - XL - Gris', 21000)"
+								class="botonAgregarAlCarrito"> Agregar al
+								carrito...</button>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/musculosa_amarillo_fluor.jpg" class="card-img-top articulo"
+							alt="MUSCULOSA">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">MUSCULOSA</h5>
+							<p><span class="badge bg-dark">Talle: M</span></p>
+							<p><span class="badge bg-info">Color: AMARILLO FLUOR</span></p>
+							<p class="text-success fw-bold fs-5">$10.000</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20MUSCULOSA"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Musculosa - M - Amarillo fluor', 10000)"
+								class="botonAgregarAlCarrito">Agregar
+								al carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/MUSCULOSA ALO gris.jpg" class="card-img-top articulo"
+							alt="MUSCULOSA ALO">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">MUSCULOSA ALO</h5>
+							<p><span class="badge bg-dark">6</span></p>
+							<p><span class="badge bg-info">Color: GRIS</span></p>
+							<p class="text-success fw-bold fs-5">$9.000</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20MUSCULOSA%20ALO"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Musculosa ALO - T6 - Gris', 9000)"
+								class="botonAgregarAlCarrito"> Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/musculosa_nike_coral_rosa.jpg" class="card-img-top articulo"
+							alt="MUSCULOSA D CALADA NIKE">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">MUSCULOSA D CALADA NIKE</h5>
+							<p><span class="badge bg-dark">2 / 5</span></p>
+							<p><span class="badge bg-info">Color: CORAL / ROSA</span></p>
+							<p class="text-success fw-bold fs-5">$10.500</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20MUSCULOSA%20D%20CALADA%20NIKE"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Musculosa Nike Calada Dama -T2/5', 10500)"
+								class="botonAgregarAlCarrito">Agregar
+								al carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/musculosa_calada_nike.jpg" class="card-img-top articulo"
+							alt="MUSCULOSA D CALADA NIKE">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">MUSCULOSA D CALADA NIKE</h5>
+							<p><span class="badge bg-dark">1 / 3</span></p>
+							<p><span class="badge bg-info">Color: LILA / VERDE FLUOR</span></p>
+							<p class="text-success fw-bold fs-5">$10.500</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20MUSCULOSA%20D%20CALADA%20NIKE"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Musculosa Nike Calada Dama -T1/3', 10500)"
+								class="botonAgregarAlCarrito">Agregar
+								al carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/MUSCULOSA D CALADA NIKE blanca.jpg" class="card-img-top articulo"
+							alt="MUSCULOSA D CALADA NIKE">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">MUSCULOSA D CALADA NIKE</h5>
+							<p><span class="badge bg-dark">3</span></p>
+							<p><span class="badge bg-info">Color: BLANCA / CELESTE</span></p>
+							<p class="text-success fw-bold fs-5">$10.500</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20MUSCULOSA%20D%20CALADA%20NIKE"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Musculosa Nike Calada Dama -T3 - blanca/celeste', 10500)"
+								class="botonAgregarAlCarrito">Agregar
+								al carrito...</button>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/MUSCULOSA D CALADA NIKE celeste.jpg" class="card-img-top articulo"
+							alt="MUSCULOSA D CALADA NIKE">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">MUSCULOSA D CALADA NIKE</h5>
+							<p><span class="badge bg-dark">4</span></p>
+							<p><span class="badge bg-info">Color: CELESTE</span></p>
+							<p class="text-success fw-bold fs-5">$10.500</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20MUSCULOSA%20D%20CALADA%20NIKE"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Musculosa Nike Calada Dama -T4 - celeste', 10500)"
+								class="botonAgregarAlCarrito">Agregar
+								al carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/hombres/MUSCULOSA_H_NEGRO_GRIS_nike.jpg" class="card-img-top articulo"
+							alt="MUSCULOSA H NIKE">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">MUSCULOSA H NIKE</h5>
+							<p><span class="badge bg-dark">1</span></p>
+							<p><span class="badge bg-info">Color: NEGRO / GRIS</span></p>
+							<p class="text-success fw-bold fs-5">$12.750</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20MUSCULOSA%20H%20NIKE"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Musculosa Nike Hombre -T1 ', 12750)"
+								class="botonAgregarAlCarrito"> Agregar al
+								carrito...</button>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/hombres/MUSCULOSA_H_GRIS_NEGRO_performance.jpg" class="card-img-top articulo"
+							alt="MUSCULOSA H PERFORMANCE">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">MUSCULOSA H PERFORMANCE</h5>
+							<p><span class="badge bg-dark">3</span></p>
+							<p><span class="badge bg-info">Color: GRIS / NEGRO</span></p>
+							<p class="text-success fw-bold fs-5">$12.750</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20MUSCULOSA%20H%20PERFORMANCE"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Musculosa Performance Hombre -T3', 12750)"
+								class="botonAgregarAlCarrito">Agregar
+								al carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/pollera.jpg" class="card-img-top articulo" alt="POLLERA">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">POLLERA</h5>
+							<p><span class="badge bg-dark">2</span></p>
+							<p><span class="badge bg-info">Color: AZUL</span></p>
+							<p class="text-success fw-bold fs-5">$18.750</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20POLLERA"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Pollera -T2 - Azul', 18750)"
+								class="botonAgregarAlCarrito"> Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/POLLERA  celeste.jpg" class="card-img-top articulo"
+							alt="POLLERA CELESTE">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">POLLERA</h5>
+							<p><span class="badge bg-dark">2</span></p>
+							<p><span class="badge bg-info">Color: CELESTE</span></p>
+							<p class="text-success fw-bold fs-5">$18.750</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20POLLERA%20CELESTE"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Pollera -T2 - celeste', 18750)"
+								class="botonAgregarAlCarrito"> Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/POLLERA  verde.jpg" class="card-img-top articulo" alt="POLLERA ACQUA">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">POLLERA</h5>
+							<p><span class="badge bg-dark">4</span></p>
+							<p><span class="badge bg-info">Color: ACQUA</span></p>
+							<p class="text-success fw-bold fs-5">$18.750</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20POLLERA%20ACQUA"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Pollera -T4 - Acqua', 18750)"
+								class="botonAgregarAlCarrito"> Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/pollera_rosada.jpg" class="card-img-top articulo" alt="POLLERA ROSADA">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">POLLERA</h5>
+							<p><span class="badge bg-dark">2</span></p>
+							<p><span class="badge bg-info">Color: ROSADO</span></p>
+							<p class="text-success fw-bold fs-5">$18.750</p>
+							<button onclick="agregarAlCarrito('Pollera -T2 - Rosado', 18750)"
+								class="botonAgregarAlCarrito"> Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/pollera_negra_rosa.jpg" class="card-img-top articulo"
+							alt="POLLERA NEGRA/ROSADA">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">POLLERA</h5>
+							<p><span class="badge bg-dark">3</span></p>
+							<p><span class="badge bg-info">Color: NEGRA/ROSADO</span></p>
+							<p class="text-success fw-bold fs-5">$18.750</p>
+							<button onclick="agregarAlCarrito('Pollera -T3 - Negra/Rosado', 18750)"
+								class="botonAgregarAlCarrito"> Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/remera_l_coral.jpg" class="card-img-top articulo" alt="REMERA D CORAL">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">REMERA D</h5>
+							<p><span class="badge bg-dark">L</span></p>
+							<p><span class="badge bg-info">Color: CORAL</span></p>
+							<p class="text-success fw-bold fs-5">$18.750</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20REMERA%20D%20CORAL"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Remera Dama - L - Coral', 18750)"
+								class="botonAgregarAlCarrito"> Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/remera_coral_fluor.jpg" class="card-img-top articulo"
+							alt="REMERA D CORAL FLUOR">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">REMERA D</h5>
+							<p><span class="badge bg-dark">M</span></p>
+							<p><span class="badge bg-info">Color: CORAL FLUOR</span></p>
+							<p class="text-success fw-bold fs-5">$18.750</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20REMERA%20D%20CORAL%20FLUOR"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Remera Dama - M - Coral Fluor', 18750)"
+								class="botonAgregarAlCarrito"> Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/remera_xl_negro.jpg" class="card-img-top articulo" alt="REMERA D NEGRO">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">REMERA D</h5>
+							<p><span class="badge bg-dark">XL</span></p>
+							<p><span class="badge bg-info">Color: NEGRO</span></p>
+							<p class="text-success fw-bold fs-5">$18.750</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20REMERA%20D%20NEGRO"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Remera Dama -XL - Negro', 18750)"
+								class="botonAgregarAlCarrito"> Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/remera_fashion.jpg" class="card-img-top articulo" alt="REMERA D ROSADO">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">REMERA D</h5>
+							<p><span class="badge bg-dark">4XL</span></p>
+							<p><span class="badge bg-info">Color: ROSADO</span></p>
+							<p class="text-success fw-bold fs-5">$12.000</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20REMERA%20D%20ROSADO"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Remera Dama - 4XL - Rosado', 12000)"
+								class="botonAgregarAlCarrito"> Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/REMERA D ALGODON.jpg" class="card-img-top articulo"
+							alt="REMERA D ALGODON">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">REMERA D ALGODON</h5>
+							<p><span class="badge bg-dark">2 / 3 / 4 / 6</span></p>
+							<p><span class="badge bg-info">Color: VARIOS</span></p>
+							<p class="text-success fw-bold fs-5">$10.000</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20REMERA%20D%20ALGODON"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Remera Algodon Dama - 2/3/4/6', 10000)"
+								class="botonAgregarAlCarrito"> Agregar al
+								carrito...</button>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/remera_d_alo.jpg" class="card-img-top articulo" alt="REMERA D ALO">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">REMERA D ALO</h5>
+							<p><span class="badge bg-dark">M </span></p>
+							<p><span class="badge bg-info">Color: BLANCO</span></p> <!-- ROSA VIEJO / -->
+							<p class="text-success fw-bold fs-5">$14.550</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20REMERA%20D%20ALO"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Remera Dama ALO - M - Blanca', 14550)"
+								class="botonAgregarAlCarrito"> Agregar al
+								carrito...</button>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/remera_d_calada_mary.jpg" class="card-img-top articulo"
+							alt="REMERA D CALADA">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">REMERA D CALADA</h5>
+							<p><span class="badge bg-dark">4</span></p>
+							<p><span class="badge bg-info">Color: AZUL / VIOLETA</span></p>
+							<p class="text-success fw-bold fs-5">$12.000</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20REMERA%20D%20CALADA"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Remera Calada Dama - T4', 12000)"
+								class="botonAgregarAlCarrito"> Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/remera_deportiva_calada_bco.jpg" class="card-img-top articulo"
+							alt="REMERA DEPORTIVA CALADA">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">REMERA DEPORTIVA CALADA</h5>
+							<p><span class="badge bg-dark">4</span></p>
+							<p><span class="badge bg-info">Color: BLANCO</span></p>
+							<p class="text-success fw-bold fs-5">$15.000</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20REMERA%20DEPORTIVA%20CALADA"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Remera Deportiva Calada - T4 - Blanco', 15000)"
+								class="botonAgregarAlCarrito">Agregar
+								al carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/hombres/REMERA_irun.jpg" class="card-img-top articulo"
+							alt="REMERA H GRIS / AZUL">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">REMERA H</h5>
+							<p><span class="badge bg-dark">2XL</span></p>
+							<p><span class="badge bg-info">Color: GRIS / AZUL</span></p>
+							<p class="text-success fw-bold fs-5">$14.250</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20REMERA%20H%20GRIS%20AZUL"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Remera Hombre - T2XL - Gris/Azul', 14250)"
+								class="botonAgregarAlCarrito">Agregar
+								al carrito...</button>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/hombres/REMERA_irun.jpg" class="card-img-top articulo"
+							alt="REMERA H GRIS / BLANCA">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">REMERA H</h5>
+							<p><span class="badge bg-dark">L</span></p>
+							<p><span class="badge bg-info">Color: GRIS / BLANCA</span></p>
+							<p class="text-success fw-bold fs-5">$14.250</p>
+							<a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20REMERA%20H%20GRIS%20BLANCA"
+								class="btn btn-outline-success btn-sm">Consultar</a>
+							<button onclick="agregarAlCarrito('Remera Hombre - TL - Gris/Blanca|', 14250)"
+								class="botonAgregarAlCarrito">Agregar
+								al carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/hombres/REMERA H AIR MAX NEGRA.jpg" class="card-img-top articulo"
+							alt="REMERA H LYCRA AIR MAX">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">REMERA H LYCRA AIR MAX</h5>
+							<p><span class="badge bg-dark">1 / 5</span></p>
+							<p><span class="badge bg-info">Color: NEGRO</span></p>
+							<p class="text-success fw-bold fs-5">$15.000</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20REMERA%20H%20LYCRA%20AIR%20MAX"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Remera Hombre Lycra AIR MAX - T1 - Negro', 15000)"
+								class="botonAgregarAlCarrito">Agregar
+								al carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/hombres/REMERA H URBAN NEGRA.jpg" class="card-img-top articulo"
+							alt="REMERA H LYCRA URBAN LUXURY">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">REMERA H LYCRA URBAN LUXURY
+							</h5>
+							<p><span class="badge bg-dark">3</span></p>
+							<p><span class="badge bg-info">Color: NEGRO</span></p>
+							<p class="text-success fw-bold fs-5">$15.000</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20REMERA%20H%20LYCRA%20URBAN%20LUXURY"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Remera Hombre Lycra URBAN LUXURY - T3 - Negro', 15000)"
+								class="botonAgregarAlCarrito">Agregar
+								al carrito...</button>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/short_d.jpg" class="card-img-top articulo" alt="SHORT D">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">SHORT D</h5>
+							<p><span class="badge bg-dark">5XL</span></p> <!-- / XL / 2XL -->
+							<p><span class="badge bg-info">Color: LILA</span></p>
+							<!-- violeta / azul sin stock -->
+							<p class="text-success fw-bold fs-5">$12.000</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20SHORT%20D"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Short Dama - T5XL - Lila', 12000)"
+								class="botonAgregarAlCarrito"> Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/mujeres/short_d_rojo_rosa.jpg" class="card-img-top articulo" alt="SHORT D">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">SHORT D</h5>
+							<p><span class="badge bg-dark">4XL / 5XL</span></p>
+							<p><span class="badge bg-info">Color: ROJO / ROSA FLUOR</span></p>
+							<p class="text-success fw-bold fs-5">$14.850</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20SHORT%20D"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Short Dama - T4XL/5XL', 14850)"
+								class="botonAgregarAlCarrito"> Agregar al
+								carrito...</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/hombres/short_irun.jpg" class="card-img-top articulo" alt="SHORT H">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">SHORT H</h5>
+							<p><span class="badge bg-dark">L</span></p> <!-- / M -->
+							<p><span class="badge bg-info">Color: AZUL MARINO</span></p>
+							<p class="text-success fw-bold fs-5">$18.750</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20SHORT%20H"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Short Hombre - L - Azul Marino', 18750)"
+								class="botonAgregarAlCarrito">Agregar
+								al carrito...</button>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/hombres/short_h_azul_fashion.jpeg" class="card-img-top articulo"
+							alt="SHORT H FASHION">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">SHORT H FASHION</h5>
+							<p><span class="badge bg-dark">XL</span></p>
+							<p><span class="badge bg-info">Color: AZUL</span></p>
+							<p class="text-success fw-bold fs-5">$11.250</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20SHORT%20H%20FASHION"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Short Hombre FASHION - XL - azul', 11250)"
+								class="botonAgregarAlCarrito">Agregar
+								al carrito...</button>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 sombraTarjeta border-warning  rounded-5">
+						<img src="media/hombres/short_h_futbol.jpg" class="card-img-top articulo" alt="SHORT H FUTBOL">
+						<div class="card-body text-center">
+							<h5 class="card-title lilita-one-regular text-warning">SHORT H FUTBOL</h5>
+							<p><span class="badge bg-dark">5</span></p>
+							<p><span class="badge bg-info">Color: NEGRO</span></p>
+							<p class="text-success fw-bold fs-5">$5.250</p>
+							<!-- <a href="https://wa.me/5493624003295?text=Hola%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20SHORT%20H%20FUTBOL"
+								class="btn btn-outline-success btn-sm">Consultar</a> -->
+							<button onclick="agregarAlCarrito('Short Futbol Hombre - T5 - Negro', 5250)"
+								class="botonAgregarAlCarrito">Agregar
+								al carrito...</button>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</section>
+
+		<!-- AGREGADO DEL CARRITO DE COMPRAS -->
+		<div class="compras">
+			<p class="text-center text-bg-success mx-5"><small>Carrito de compras:</small></p>
+			<div id="carrito" class="mx-auto d-flex">
+
+				<ul id="lista-carrito"></ul>
+			</div>
+
+			<!-- agrupo botones enviar y vacias -->
+			<div class="d-flex justify-content-center align-items-center flex-wrap gap-3 mt-3">
+
+				<!-- boton actual de pedido al WS -->
+				<!-- From Uiverse.io by adamgiebl -->
+				<button class="buttonCarrito">
+					<div class="svg-wrapper-1">
+						<div class="svg-wrapper">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+								<path fill="none" d="M0 0h24v24H0z"></path>
+								<path fill="currentColor"
+									d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z">
+								</path>
+							</svg>
+						</div>
+					</div>
+					<span>Enviar Pedido</span>
+				</button>
+
+				<!-- Botón Vaciar Carrito -->
+				<button onclick="vaciarCarrito()" class="btn btn-danger">
+					<i class="bi bi-trash"></i> Vaciar Carrito
+				</button>
+			</div>
+
+		</div>
+	</main>
+
+	<!-- Footer Mejorado -->
+	<footer class="custom-footer">
+		<div class="container">
+
+			<hr>
+			<!-- contador de visitas de https://www.contadorvisitasgratis.com/ -->
+			<p class="text-center small">Contador de Visitas:<a href="https://www.contadorvisitasgratis.com"
+					title="contador web">
+					<img src="https://counter1.optistats.ovh/private/contadorvisitasgratis.php?c=hune1xy1keryb8f3pw76m6k38rg4ycfa"
+						title="contador web" alt="contador web"></a></p>
+			<hr>
+
+			<div class="row">
+				<!-- Información de la empresa -->
+				<div class="col-lg-4 col-md-6 footer-section">
+					<h5 class="footer-title">MAGMA FIT HOUSE</h5>
+					<p class="contact-info">Tu showroom de confianza para indumentaria deportiva en Resistencia,
+						Chaco.
+					</p>
+					<p>Calidad, estilo y comodidad en cada prenda.</p>
+
+					<div class="contact-info">
+						<!-- <p><i class="bi bi-geo-alt"></i> Resistencia, Chaco, Argentina</p> -->
+						<!-- <p><i class="bi bi-envelope"></i> info@mfdeportes.com</p> -->
+						<p><i class="bi bi-telephone"></i>Cel. 362-4003295</p>
+						<!-- <p><i class="bi bi-clock"></i> Lun-Vie: 9:00-18:00 | Sáb: 9:00-13:00</p> -->
+					</div>
+
+				</div>
+
+				<!-- Enlaces rápidos -->
+				<div class="col-lg-4 col-md-6 footer-section">
+					<h5 class="footer-title">Categorías</h5>
+					<ul class="footer-links">
+						<li><a href="#RopaDeportiva"><i class="bi bi-arrow-right"></i> Ropa Deportiva</a></li>
+						<li><a href="#Accesorios"><i class="bi bi-arrow-right"></i> Accesorios</a></li>
+						<li><a href="#Lenceria"><i class="bi bi-arrow-right"></i> Lencería</a></li>
+
+						<!-- implementar en el futuro -->
+						<!-- <li><a href="#"><i class="bi bi-arrow-right"></i> Ofertas</a></li> -->
+						<!-- <li><a href="#"><i class="bi bi-arrow-right"></i> Nuevos Productos</a></li> -->
+
+					</ul>
+				</div>
+
+				<!-- Enlaces de ayuda -->
+				<!-- <div class="col-lg-2 col-md-6 footer-section">
+					<h5 class="footer-title">Ayuda</h5>
+					<ul class="footer-links">
+						<li><a href="#"><i class="bi bi-question-circle"></i> Preguntas Frecuentes</a></li>
+						<li><a href="#"><i class="bi bi-truck"></i> Envíos y Entregas</a></li>
+						<li><a href="#"><i class="bi bi-arrow-return-left"></i> Devoluciones</a></li>
+						<li><a href="#"><i class="bi bi-credit-card"></i> Métodos de Pago</a></li>
+						<li><a href="#"><i class="bi bi-shield-check"></i> Política de Privacidad</a></li>
+					</ul>
+				</div> -->
+
+
+				<!-- Newsletter y contacto -->
+				<div class="col-lg-4 col-md-6 footer-section">
+					<div class="social-links">
+						<h5>Seguinos en</h5>
+						<a href="https://www.instagram.com/magma_fit_house/" class="social-link" target="_blank">
+
+							<!-- From Uiverse.io by david-mohseni -->
+							<ul class="wrapper">
+								<li class="icon instagram">
+									<span class="tooltip">Instagram</span>
+									<svg xmlns="http://www.w3.org/2000/svg" height="1.2em" fill="currentColor"
+										class="bi bi-instagram" viewBox="0 0 16 16">
+										<path
+											d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z">
+										</path>
+									</svg>
+								</li>
+							</ul>
+						</a>
+					</div>
+
+					<h5 class="footer-title mt-4">Formas de pago</h5>
+					<div class="payment-methods ps-4">
+						<li class="payment-method">Transferencia</li>
+						<li class="payment-method">Efectivo</li>
+					</div>
+				</div>
+
+				<div class="contenedor text-info-emphasis lh-sm">
+					<div class="footer-bottom text-center mt-4">
+						<p>&copy; 2025 MAGMA Fit House. Todos los derechos reservados.</p>
+						<p>Diseño Web y Mantenimiento por <a href="https://serviciosinformaticosintegrales.netlify.app"
+								target="_blank" class="developer-credit"><img src="logos/SII/favicon-32x32.png"
+									alt="Logo Servicios Informáticos Integrales"
+									title="Servicios Informáticos Integrales"></a> |
+							<a href="https://wa.me/5493624096688?text=Hola%20quiero%20más%20información" target="_blank"
+								class="developer-credit">Contacto al <i class="fa-brands fa-whatsapp"></i></a>
+						</p>
+						<p>Resistencia - Chaco | Actualizado: 19/11/2025 - 00:02hs. Version 2</p>
+					</div>
+				</div> <!--fin contenedor -->
+
+				<script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+				<noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true" alt=""
+						referrerpolicy="no-referrer-when-downgrade" /></noscript>
+
+				<!-- nuevo carrito de compras -->
+				<script src="carritoDeCompras.js"></script>
+</body>
+
+</html>

@@ -978,3 +978,78 @@ body {
     padding-top: 125px;
   }
 }
+
+/* ===== SOBREESCRIBIR ESTILOS BOOTSTRAP PARA GRID PERSONALIZADO ===== */
+
+/* En móviles: 2 columnas */
+@media (max-width: 767px) {
+    .row-cols-sm-2 > * {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+    
+    .container .row {
+        --bs-gutter-x: 1rem;
+        margin-left: calc(var(--bs-gutter-x) * -.5);
+        margin-right: calc(var(--bs-gutter-x) * -.5);
+    }
+    
+    .container .row > * {
+        padding-left: calc(var(--bs-gutter-x) * .5);
+        padding-right: calc(var(--bs-gutter-x) * .5);
+        margin-bottom: 1rem;
+    }
+}
+
+/* En tablets: 3 columnas */
+@media (min-width: 768px) and (max-width: 991px) {
+    .row-cols-md-3 > * {
+        flex: 0 0 auto;
+        width: 33.333333%;
+    }
+}
+
+/* En desktop: 4 columnas */
+@media (min-width: 992px) {
+    .row-cols-lg-4 > * {
+        flex: 0 0 auto;
+        width: 25%;
+    }
+}
+
+/* Mejorar las tarjetas existentes */
+.card {
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+@media (max-width: 767px) {
+    .card-img-top {
+        height: 180px;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+}
+
+/* Asegurar que las secciones tengan buen espaciado */
+section.container {
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 767px) {
+    section.container {
+        margin-bottom: 1.5rem;
+    }
+}
