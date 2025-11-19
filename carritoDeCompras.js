@@ -145,3 +145,148 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+// Añadir al final del archivo carritoDeCompras.js
+
+// Función para mostrar el carrito con scroll suave
+function mostrarCarritoConScroll() {
+  const carritoSection = document.querySelector('.compras');
+  if (carritoSection) {
+    // Cerrar tooltips activos
+    document.querySelectorAll('.contact-btn::after, .cart-btn::after').forEach(tooltip => {
+      tooltip.style.opacity = '0';
+      tooltip.style.visibility = 'hidden';
+    });
+    
+    // Scroll suave al carrito
+    carritoSection.scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
+    });
+    
+    // Efecto visual de highlight
+    carritoSection.style.transition = 'all 0.3s ease';
+    carritoSection.style.boxShadow = '0 0 0 3px rgba(13, 110, 253, 0.3)';
+    carritoSection.style.backgroundColor = '#f8f9fa';
+    
+    setTimeout(() => {
+      carritoSection.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+      carritoSection.style.backgroundColor = 'white';
+    }, 1500);
+  }
+}
+
+// Tooltips para móviles con mejor UX
+function setupMobileTooltips() {
+  const buttons = document.querySelectorAll('.contact-btn, .cart-btn');
+  
+  buttons.forEach(btn => {
+    let tooltipTimer;
+    
+    btn.addEventListener('touchstart', function(e) {
+      e.preventDefault();
+      const title = this.getAttribute('title');
+      
+      if (title && window.innerWidth < 768) {
+        // Crear tooltip temporal
+        const existingTooltip = document.querySelector('.mobile-tooltip');
+        if (existingTooltip) {
+          document.body.removeChild(existingTooltip);
+        }
+        
+        const tooltip = document.createElement('div');
+        tooltip.className = 'mobile-tooltip';
+        tooltip.textContent = title;
+        tooltip.style.cssText = `
+          position: fixed;
+          bottom: 70px;
+          left: 50%;
+          transform: translateX(-50%);
+          background: rgba(0, 0, 0, 0.9);
+          color: white;
+          padding: 8px 12px;
+          border-radius: 6px;
+          font-size: 0.8rem;
+          white-space: nowrap;
+          z-index: 9999;
+          pointer-events: none;
+          animation: fadeIn 0.2s ease;
+        `;
+        
+        document.body.appendChild(tooltip);
+        
+        // Remover después de 1.5 segundos
+        tooltipTimer = setTimeout(() => {
+          if (document.body.contains(tooltip)) {
+            tooltip.style.animation = 'fadeOut 0.2s ease';
+            setTimeout(() => {
+              if (document.body.contains(tooltip)) {
+                document.body.removeChild(tooltip);
+              }
+            }, 200);
+          }
+        }, 1500);
+      }
+    });
+    
+    btn.addEventListener('touchend', function() {
+      clearTimeout(tooltipTimer);
+      const tooltips = document.querySelectorAll('.mobile-tooltip');
+      tooltips.forEach(tooltip => {
+        if (document.body.contains(tooltip)) {
+          tooltip.style.animation = 'fadeOut 0.2s ease';
+          setTimeout(() => {
+            if (document.body.contains(tooltip)) {
+              document.body.removeChild(tooltip);
+            }
+          }, 200);
+        }
+      });
+    });
+  });
+}
+
+// Añadir estilos CSS para las animaciones
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+  }
+  
+  @keyframes fadeOut {
+    from { opacity: 1; transform: translateX(-50%) translateY(0); }
+    to { opacity: 0; transform: translateX(-50%) translateY(10px); }
+  }
+`;
+document.head.appendChild(style);
+
+// Inicialización mejorada
+document.addEventListener('DOMContentLoaded', function () {
+  const botonEnviar = document.querySelector('.buttonCarrito');
+  const botonCarrito = document.querySelector('.cart-btn');
+  
+  if (botonEnviar) {
+    botonEnviar.addEventListener('click', enviarPorWhatsApp);
+  }
+  
+  if (botonCarrito) {
+    botonCarrito.addEventListener('click', mostrarCarritoConScroll);
+  }
+
+  // Inicializar carrito
+  mostrarCarrito();
+  actualizarContadorCarrito();
+  
+  // Configurar tooltips para móviles
+  if (window.innerWidth < 768) {
+    setupMobileTooltips();
+  }
+  
+  // Reconfigurar en redimensionamiento
+  window.addEventListener('resize', function() {
+    if (window.innerWidth < 768) {
+      setupMobileTooltips();
+    }
+  });
+});

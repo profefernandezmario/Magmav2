@@ -742,3 +742,239 @@ body {
     visibility: visible;
   }
 }
+
+/* Añadir al final del archivo estilosAjustados.css */
+
+/* HEADER REORGANIZADO PARA MÓVILES - BOTONES EN FILA, CARRITO DEBAJO */
+@media (max-width: 768px) {
+  .header-top {
+    padding: 8px 0;
+  }
+  
+  .custom-header .container {
+    padding: 0 10px;
+  }
+  
+  /* Reorganización en dos filas independientes */
+  .header-top .row {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  /* Primera fila: Logo + Botones de contacto en horizontal */
+  .header-top .row > .col-lg-2,
+  .header-top .row > .col-lg-8 {
+    width: 100%;
+    flex: 0 0 auto;
+  }
+  
+  /* Logo más pequeño y alineado a la izquierda */
+  .header-top .row > .col-lg-2 {
+    text-align: left;
+    margin-bottom: 0;
+  }
+  
+  .logo-container img {
+    max-height: 40px !important;
+  }
+  
+  /* Botones de contacto en fila horizontal */
+  .header-top .row > .col-lg-8 {
+    order: 2;
+  }
+  
+  .buttons-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    width: 100%;
+  }
+  
+  .contact-btn {
+    flex: 1;
+    font-size: 0;
+    padding: 10px 5px;
+    min-height: 44px;
+    max-width: none;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .contact-btn i {
+    font-size: 1.4rem;
+    margin-right: 0;
+  }
+  
+  .contact-btn span {
+    display: none !important;
+  }
+  
+  /* Segunda fila: Carrito ocupa todo el ancho */
+  .header-top .row > .col-lg-2 {
+    width: 100%;
+    order: 3;
+    margin-top: 5px;
+  }
+  
+  .cart-btn-container {
+    width: 100%;
+  }
+  
+  .cart-btn {
+    width: 100%;
+    margin: 0;
+    padding: 12px 15px;
+    font-size: 1rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .cart-btn i {
+    font-size: 1.3rem;
+    margin-right: 8px;
+  }
+  
+  .cart-btn span {
+    display: inline !important;
+  }
+  
+  .badge-cart {
+    font-size: 0.75rem;
+    padding: 5px 7px;
+    top: -8px;
+    right: -8px;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    padding-top: 140px;
+  }
+  
+  .header-top {
+    padding: 6px 0;
+  }
+  
+  .logo-container img {
+    max-height: 35px !important;
+  }
+  
+  .buttons-container {
+    gap: 6px;
+  }
+  
+  .contact-btn {
+    padding: 9px 4px;
+    min-height: 42px;
+  }
+  
+  .contact-btn i {
+    font-size: 1.3rem;
+  }
+  
+  .cart-btn {
+    padding: 11px 12px;
+    font-size: 0.95rem;
+  }
+  
+  .cart-btn i {
+    font-size: 1.2rem;
+    margin-right: 6px;
+  }
+}
+
+@media (max-width: 400px) {
+  .buttons-container {
+    gap: 4px;
+  }
+  
+  .contact-btn {
+    padding: 8px 3px;
+    min-height: 40px;
+  }
+  
+  .contact-btn i {
+    font-size: 1.2rem;
+  }
+  
+  .cart-btn {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+  
+  .cart-btn i {
+    font-size: 1.1rem;
+  }
+}
+
+/* Estilos específicos para pantallas muy pequeñas */
+@media (max-width: 360px) {
+  .contact-btn {
+    padding: 7px 2px;
+    min-height: 38px;
+  }
+  
+  .contact-btn i {
+    font-size: 1.1rem;
+  }
+  
+  .buttons-container {
+    gap: 3px;
+  }
+}
+
+/* Tooltips mejorados */
+.contact-btn, .cart-btn {
+  position: relative;
+}
+
+.contact-btn::after, .cart-btn::after {
+  content: attr(title);
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.contact-btn:hover::after, .cart-btn:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Para dispositivos táctiles */
+@media (hover: none) and (pointer: coarse) {
+  .contact-btn:active::after, .cart-btn:active::after {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* Asegurar que el header tenga suficiente padding-top en móviles */
+@media (max-width: 768px) {
+  body {
+    padding-top: 130px;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    padding-top: 125px;
+  }
+}

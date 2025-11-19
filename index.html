@@ -52,48 +52,54 @@
 
 <body class="container-fluid px-0 px-sm-0 mx-0">
 
-	<!-- Header -->
+<!-- Header -->
 <header class="custom-header">
   <div class="header-top">
     <div class="container">
       <div class="row align-items-center">
+        <!-- Primera fila en móviles: Logo + Botones en horizontal -->
+        
         <!-- Logo -->
-        <div class="col-lg-2 col-md-3 col-4">
-          <a href="#">
-            <img src="logos/MAGMa_verde_1-01.png" alt="MAGMA Indumentaria Deportiva" class="img-fluid">
-          </a>
+        <div class="col-lg-2 col-md-3 col-4 mb-lg-0">
+          <div class="logo-container">
+            <a href="#">
+              <img src="logos/MAGMa_verde_1-01.png" alt="MAGMA Indumentaria Deportiva" class="img-fluid">
+            </a>
+          </div>
         </div>
 
-        <!-- Botones de contacto -->
-        <div class="col-lg-8 col-md-6 col-12">
+        <!-- Botones de contacto - Misma fila que el logo en móviles -->
+        <div class="col-lg-8 col-md-6 col-8 mb-lg-0">
           <div class="buttons-container">
             <a href="http://instagram.com/magma_fit_house" target="_blank"
               class="contact-btn btn-instagram" title="Instagram">
               <i class="fab fa-instagram"></i>
-              <span class="d-none d-md-inline">Instagram</span>
+              <span class="d-none d-lg-inline">Instagram</span>
             </a>
 
             <a href="https://wa.me/5493624003295?text=Hola%20quiero%20más%20información" target="_blank"
               class="contact-btn btn-whatsapp" title="WhatsApp">
               <i class="fab fa-whatsapp"></i>
-              <span class="d-none d-md-inline">WhatsApp</span>
+              <span class="d-none d-lg-inline">WhatsApp</span>
             </a>
 
-            <button class="contact-btn btn-payment" type="button" title="Transferencias - Alias: MF.INDUMENTARIAS">
+            <button class="contact-btn btn-payment" type="button" title="Transferencias">
               <i class="fas fa-money-bill-wave"></i>
-              <span class="d-none d-md-inline pt-2">Alias: <strong>MF.INDUMENTARIAS</strong></span>
+              <span class="d-none d-lg-inline">Alias: <strong>MF.INDUMENTARIAS</strong></span>
             </button>
           </div>
         </div>
 
-        <!-- Carrito optimizado -->
-        <div class="col-lg-2 col-md-3 col-4 text-end cart-btn-container">
-          <button class="cart-btn position-relative" title="Carrito de compras">
-            <i class="fas fa-shopping-cart"></i>
-            <span class="d-none d-md-inline"> Carrito</span>
-            <span id="carrito-contador"
-              class="position-absolute top-0 start-100 translate-middle badge badge-cart rounded-pill">0</span>
-          </button>
+        <!-- Segunda fila en móviles: Carrito ocupa todo el ancho -->
+        <div class="col-lg-2 col-md-3 col-12 mt-lg-0">
+          <div class="cart-btn-container">
+            <button class="cart-btn position-relative" title="Ver carrito de compras">
+              <i class="fas fa-shopping-cart"></i>
+              <span>Carrito</span>
+              <span id="carrito-contador"
+                class="position-absolute top-0 start-100 translate-middle badge badge-cart rounded-pill">0</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
