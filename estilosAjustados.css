@@ -852,6 +852,7 @@ body {
   }
 }
 
+
 @media (max-width: 576px) {
   body {
     padding-top: 140px;
@@ -1052,4 +1053,40 @@ section.container {
     section.container {
         margin-bottom: 1.5rem;
     }
+}
+
+/* ===== SOLUCIÓN GLOBAL SIN MODIFICAR HTML ===== */
+/* Reducir TODAS las imágenes promo.svg automáticamente */
+img[src="media/promo.svg"],
+img[src*="/promo.svg"],
+img[src*="promo.svg"] {
+    width: 50px !important;
+    height: 50px !important;
+    max-width: 75px !important;
+    max-height: 75px !important;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Específico para las cards de Bootstrap */
+.card img[src="media/promo.svg"],
+.card img[src*="/promo.svg"],
+.card img[src*="promo.svg"] {
+    width: 50px !important;
+    height: 50px !important;
+    margin: 8px auto !important;
+    display: block !important;
+}
+
+/* Ajustar el espaciado alrededor del icono promocional */
+.card-body br + img[src*="promo.svg"] {
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+}
+
+/* Para las nuevas tarjetas con grid personalizado */
+.tarjeta-producto img[src*="promo.svg"] {
+    width: 50px !important;
+    height: 50px !important;
+    margin: 10px auto !important;
 }
