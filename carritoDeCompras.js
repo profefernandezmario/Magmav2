@@ -1,108 +1,105 @@
 let carrito = [];
 
 function agregarAlCarrito(nombre, precio) {
-    carrito.push({ nombre, precio });
-    mostrarCarrito();
-    actualizarContadorCarrito();
+  carrito.push({ nombre, precio });
+  mostrarCarrito();
+  actualizarContadorCarrito();
 }
 
 function mostrarCarrito() {
-    const lista = document.getElementById('lista-carrito');
-    lista.innerHTML = '';
+  const lista = document.getElementById('lista-carrito');
+  lista.innerHTML = '';
 
-    if (carrito.length === 0) {
-        lista.innerHTML = '<li class="list-group-item text-center text-muted">El carrito está vacío</li>';
-        return;
-    }
+  if (carrito.length === 0) {
+    lista.innerHTML = '<li class="list-group-item text-center text-muted">El carrito está vacío</li>';
+    return;
+  }
 
-    let total = 0;
-    carrito.forEach((item, i) => {
-        const li = document.createElement('li');
-        li.className = 'list-group-item d-flex justify-content-between align-items-center';
-        li.innerHTML = `
+  let total = 0;
+  carrito.forEach((item, i) => {
+    const li = document.createElement('li');
+    li.className = 'list-group-item d-flex justify-content-between align-items-center';
+    li.innerHTML = `
       <span>${item.nombre} - $${item.precio}</span>
       <button class="btn btn-danger btn-sm" onclick="quitarDelCarrito(${i})">
         <i class="bi bi-trash"></i> Quitar
       </button>
     `;
-        lista.appendChild(li);
-        total += item.precio;
-    });
+    lista.appendChild(li);
+    total += item.precio;
+  });
 
-    // Agregar total
-    const totalLi = document.createElement('li');
-    totalLi.className = 'list-group-item d-flex justify-content-between align-items-center fw-bold';
-    totalLi.innerHTML = `<span>TOTAL:</span><span>$${total}</span>`;
-    lista.appendChild(totalLi);
+  // Agregar total
+  const totalLi = document.createElement('li');
+  totalLi.className = 'list-group-item d-flex justify-content-between align-items-center fw-bold';
+  totalLi.innerHTML = `<span>TOTAL:</span><span>$${total}</span>`;
+  lista.appendChild(totalLi);
 }
 
 function actualizarContadorCarrito() {
-    const contador = document.getElementById('carrito-contador');
-    if (contador) {
-        contador.textContent = carrito.length;
-    }
+  actualizarContadoresCarrito();
 }
 
 function quitarDelCarrito(indice) {
-    carrito.splice(indice, 1);
-    mostrarCarrito();
-    actualizarContadorCarrito();
+  carrito.splice(indice, 1);
+  mostrarCarrito();
+  actualizarContadorCarrito();
 }
 
 function vaciarCarrito() {
-    if (carrito.length === 0) {
-        alert('¡El carrito ya está vacío!');
-        return;
-    }
+  if (carrito.length === 0) {
+    alert('¡El carrito ya está vacío!');
+    return;
+  }
 
-    if (confirm('¿Estás seguro de que quieres vaciar el carrito?')) {
-        carrito = [];
-        mostrarCarrito();
-        actualizarContadorCarrito();
-        alert('Carrito vaciado');
-    }
-}
-
-function enviarPorWhatsApp() {
-    if (carrito.length === 0) {
-        alert('¡El carrito está vacío! Agrega algunos productos antes de enviar el pedido.');
-        return;
-    }
-
-    let mensaje = '¡Hola! Quiero realizar el siguiente pedido:\n\n';
-    let total = 0;
-
-    carrito.forEach(item => {
-        mensaje += `• ${item.nombre} - $${item.precio}\n`;
-        total += item.precio;
-    });
-
-    mensaje += `\n💰 TOTAL: $${total}`;
-    mensaje += `\n\n📦 Por favor, confirmen disponibilidad y forma de entrega.`;
-    mensaje += `\n\n¡Gracias!`;
-
-    const telefono = '5493624003295';
-    const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
-
-    // Vaciar carrito después de enviar
+  if (confirm('¿Estás seguro de que quieres vaciar el carrito?')) {
     carrito = [];
     mostrarCarrito();
     actualizarContadorCarrito();
+    alert('Carrito vaciado');
+  }
+}
 
-    // Abrir WhatsApp
-    window.open(url, '_blank');
+function enviarPorWhatsApp() {
+  if (carrito.length === 0) {
+    alert('¡El carrito está vacío! Agrega algunos productos antes de enviar el pedido.');
+    return;
+  }
+
+  let mensaje = '¡Hola! Quiero realizar el siguiente pedido:\n\n';
+  let total = 0;
+
+  carrito.forEach(item => {
+    mensaje += `• ${item.nombre} - $${item.precio}\n`;
+    total += item.precio;
+  });
+
+  mensaje += `\n💰 TOTAL: $${total}`;
+  mensaje += `\n\n📦 Por favor, confirmen disponibilidad y forma de entrega.`;
+  mensaje += `\n\n¡Gracias!`;
+
+  const telefono = '5493624003295';
+  const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+
+  // Vaciar carrito después de enviar
+  carrito = [];
+  mostrarCarrito();
+  actualizarContadorCarrito();
+
+  // Abrir WhatsApp
+  window.open(url, '_blank');
 }
 
 // Conectar el botón bonito de enviar pedido
 document.addEventListener('DOMContentLoaded', function () {
-    const botonEnviar = document.querySelector('.buttonCarrito');
-    if (botonEnviar) {
-        botonEnviar.addEventListener('click', enviarPorWhatsApp);
-    }
+  const botonEnviar = document.querySelector('.buttonCarrito');
+  if (botonEnviar) {
+    botonEnviar.addEventListener('click', enviarPorWhatsApp);
+  }
 
-    // Inicializar carrito
-    mostrarCarrito();
-    actualizarContadorCarrito();
+  // Inicializar carrito
+  mostrarCarrito();
+  actualizarContadorCarrito();
 });
 
 // Añadir al final del archivo carritoDeCompras.js
@@ -119,11 +116,11 @@ function toggleCarrito() {
 document.addEventListener('DOMContentLoaded', function () {
   const botonEnviar = document.querySelector('.buttonCarrito');
   const botonCarrito = document.querySelector('.cart-btn');
-  
+
   if (botonEnviar) {
     botonEnviar.addEventListener('click', enviarPorWhatsApp);
   }
-  
+
   if (botonCarrito) {
     botonCarrito.addEventListener('click', toggleCarrito);
   }
@@ -131,11 +128,11 @@ document.addEventListener('DOMContentLoaded', function () {
   // Inicializar carrito
   mostrarCarrito();
   actualizarContadorCarrito();
-  
+
   // Añadir tooltips para móviles
   const contactButtons = document.querySelectorAll('.contact-btn');
   contactButtons.forEach(btn => {
-    btn.addEventListener('touchstart', function() {
+    btn.addEventListener('touchstart', function () {
       // Mostrar tooltip en dispositivos táctiles
       const title = this.getAttribute('title');
       if (title && window.innerWidth < 768) {
@@ -157,18 +154,18 @@ function mostrarCarritoConScroll() {
       tooltip.style.opacity = '0';
       tooltip.style.visibility = 'hidden';
     });
-    
+
     // Scroll suave al carrito
-    carritoSection.scrollIntoView({ 
+    carritoSection.scrollIntoView({
       behavior: 'smooth',
       block: 'start'
     });
-    
+
     // Efecto visual de highlight
     carritoSection.style.transition = 'all 0.3s ease';
     carritoSection.style.boxShadow = '0 0 0 3px rgba(13, 110, 253, 0.3)';
     carritoSection.style.backgroundColor = '#f8f9fa';
-    
+
     setTimeout(() => {
       carritoSection.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
       carritoSection.style.backgroundColor = 'white';
@@ -179,21 +176,21 @@ function mostrarCarritoConScroll() {
 // Tooltips para móviles con mejor UX
 function setupMobileTooltips() {
   const buttons = document.querySelectorAll('.contact-btn, .cart-btn');
-  
+
   buttons.forEach(btn => {
     let tooltipTimer;
-    
-    btn.addEventListener('touchstart', function(e) {
+
+    btn.addEventListener('touchstart', function (e) {
       e.preventDefault();
       const title = this.getAttribute('title');
-      
+
       if (title && window.innerWidth < 768) {
         // Crear tooltip temporal
         const existingTooltip = document.querySelector('.mobile-tooltip');
         if (existingTooltip) {
           document.body.removeChild(existingTooltip);
         }
-        
+
         const tooltip = document.createElement('div');
         tooltip.className = 'mobile-tooltip';
         tooltip.textContent = title;
@@ -212,9 +209,9 @@ function setupMobileTooltips() {
           pointer-events: none;
           animation: fadeIn 0.2s ease;
         `;
-        
+
         document.body.appendChild(tooltip);
-        
+
         // Remover después de 1.5 segundos
         tooltipTimer = setTimeout(() => {
           if (document.body.contains(tooltip)) {
@@ -228,8 +225,8 @@ function setupMobileTooltips() {
         }, 1500);
       }
     });
-    
-    btn.addEventListener('touchend', function() {
+
+    btn.addEventListener('touchend', function () {
       clearTimeout(tooltipTimer);
       const tooltips = document.querySelectorAll('.mobile-tooltip');
       tooltips.forEach(tooltip => {
@@ -265,28 +262,144 @@ document.head.appendChild(style);
 document.addEventListener('DOMContentLoaded', function () {
   const botonEnviar = document.querySelector('.buttonCarrito');
   const botonCarrito = document.querySelector('.cart-btn');
-  
+
   if (botonEnviar) {
     botonEnviar.addEventListener('click', enviarPorWhatsApp);
   }
-  
+
   if (botonCarrito) {
     botonCarrito.addEventListener('click', mostrarCarritoConScroll);
   }
 
   // Inicializar carrito
   mostrarCarrito();
-  actualizarContadorCarrito();
-  
+  actualizarContadoresCarrito();
+
   // Configurar tooltips para móviles
-  if (window.innerWidth < 768) {
+  if (window.innerWidth < 992) {
     setupMobileTooltips();
   }
-  
+
   // Reconfigurar en redimensionamiento
-  window.addEventListener('resize', function() {
-    if (window.innerWidth < 768) {
+  window.addEventListener('resize', function () {
+    if (window.innerWidth < 992) {
       setupMobileTooltips();
     }
   });
 });
+
+// ===== FUNCIONES PARA EL HEADER REDISEÑADO =====
+
+// Actualizar contadores en ambos headers
+function actualizarContadoresCarrito() {
+  const contadorDesktop = document.getElementById('carrito-contador-desktop');
+  const contadorMobile = document.getElementById('carrito-contador-mobile');
+
+  if (contadorDesktop) contadorDesktop.textContent = carrito.length;
+  if (contadorMobile) contadorMobile.textContent = carrito.length;
+}
+
+// Función para mostrar carrito con scroll
+function mostrarCarritoConScroll() {
+  const carritoSection = document.querySelector('.compras');
+  if (carritoSection) {
+    carritoSection.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+
+    // Efecto visual
+    carritoSection.style.transition = 'all 0.3s ease';
+    carritoSection.style.boxShadow = '0 0 0 3px rgba(13, 110, 253, 0.3)';
+
+    setTimeout(() => {
+      carritoSection.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+    }, 1000);
+  }
+}
+
+// Tooltips para móviles
+function setupMobileTooltips() {
+  const buttons = document.querySelectorAll('.contact-btn-mobile, .cart-btn-mobile');
+
+  buttons.forEach(btn => {
+    let tooltipTimer;
+
+    btn.addEventListener('touchstart', function (e) {
+      e.preventDefault();
+      const title = this.getAttribute('title');
+
+      if (title && window.innerWidth < 992) {
+        const existingTooltip = document.querySelector('.mobile-tooltip');
+        if (existingTooltip) {
+          document.body.removeChild(existingTooltip);
+        }
+
+        const tooltip = document.createElement('div');
+        tooltip.className = 'mobile-tooltip';
+        tooltip.textContent = title;
+        tooltip.style.cssText = `
+                    position: fixed;
+                    bottom: 80px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background: rgba(0, 0, 0, 0.9);
+                    color: white;
+                    padding: 8px 12px;
+                    border-radius: 6px;
+                    font-size: 0.8rem;
+                    white-space: nowrap;
+                    z-index: 9999;
+                    pointer-events: none;
+                `;
+
+        document.body.appendChild(tooltip);
+
+        tooltipTimer = setTimeout(() => {
+          if (document.body.contains(tooltip)) {
+            document.body.removeChild(tooltip);
+          }
+        }, 2000);
+      }
+    });
+
+    btn.addEventListener('touchend', function () {
+      clearTimeout(tooltipTimer);
+      const tooltips = document.querySelectorAll('.mobile-tooltip');
+      tooltips.forEach(tooltip => {
+        if (document.body.contains(tooltip)) {
+          document.body.removeChild(tooltip);
+        }
+      });
+    });
+  });
+}
+
+// ===== INICIALIZACIÓN =====
+document.addEventListener('DOMContentLoaded', function () {
+  // Botones de enviar pedido
+  const botonEnviar = document.querySelector('.buttonCarrito');
+  if (botonEnviar) {
+    botonEnviar.addEventListener('click', enviarPorWhatsApp);
+  }
+
+  // Botones del carrito (ambas versiones)
+  const botonesCarrito = document.querySelectorAll('.cart-btn-desktop, .cart-btn-mobile');
+  botonesCarrito.forEach(boton => {
+    boton.addEventListener('click', mostrarCarritoConScroll);
+  });
+
+  // Botón de pago (mostrar info del alias)
+  const botonPago = document.querySelector('.btn-payment-desktop, .btn-payment-mobile');
+  if (botonPago) {
+    botonPago.addEventListener('click', function () {
+      if (window.innerWidth >= 992) {
+        alert('Alias para transferencias: MF.INDUMENTARIAS\n(Mario R. Fernández - Lemon)');
+      } else {
+        // En móvil, copiar al portapapeles
+        navigator.clipboard.writeText('MF.INDUMENTARIAS').then(() => {
+          alert('Alias copiado: MF.INDUMENTARIAS');
+        });
+      }
+    });
+  }

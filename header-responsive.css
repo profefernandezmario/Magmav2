@@ -1,0 +1,373 @@
+/* HEADER REDISEÑADO - VERSIÓN COMPLETA */
+:root {
+  --primary-blue: #0d6efd;
+  --success-green: #198754;
+  --instagram-gradient: linear-gradient(
+    45deg,
+    #405de6,
+    #5851db,
+    #833ab4,
+    #c13584,
+    #e1306c,
+    #fd1d1d
+  );
+  --whatsapp-gradient: linear-gradient(45deg, #25d366, #128c7e);
+  --payment-gradient: linear-gradient(45deg, #17a2b8, #6f42c1);
+  --cart-gradient: linear-gradient(45deg, #0d6efd, #6610f2);
+}
+
+/* HEADER BASE */
+.custom-header {
+  background: linear-gradient(
+    90deg,
+    #cb790e 0%,
+    #23a5d4 35%,
+    #f4103a 70%,
+    #0d0c0e 100%
+  );
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1030;
+}
+
+.header-top {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 12px 0;
+}
+
+/* ===== VERSIÓN DESKTOP (≥ 992px) ===== */
+.header-desktop {
+  display: block;
+}
+
+.header-desktop .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Logo Desktop */
+.logo-desktop {
+  flex: 0 0 auto;
+}
+
+.logo-desktop img {
+  max-height: 65px;
+  transition: transform 0.3s ease;
+}
+
+.logo-desktop img:hover {
+  transform: scale(1.05);
+}
+
+/* Botones Desktop */
+.buttons-desktop {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  justify-content: center;
+}
+
+.contact-btn-desktop {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  min-width: 140px;
+  justify-content: center;
+}
+
+.contact-btn-desktop:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+.contact-btn-desktop i {
+  font-size: 1.2rem;
+}
+
+.btn-instagram-desktop {
+  background: var(--instagram-gradient);
+}
+
+.btn-whatsapp-desktop {
+  background: var(--whatsapp-gradient);
+}
+
+.btn-payment-desktop {
+  background: var(--payment-gradient);
+  white-space: nowrap;
+}
+
+/* Carrito Desktop */
+.cart-desktop {
+  flex: 0 0 auto;
+}
+
+.cart-btn-desktop {
+  background: var(--cart-gradient);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: white;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  min-width: 120px;
+  justify-content: center;
+}
+
+.cart-btn-desktop:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.badge-cart-desktop {
+  background-color: #dc3545;
+  font-size: 0.75rem;
+  padding: 4px 8px;
+}
+
+/* ===== VERSIÓN MÓVIL (≤ 991px) ===== */
+.header-mobile {
+  display: none;
+}
+
+/* Header Mobile Compacto */
+.mobile-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
+/* Logo Mobile */
+.logo-mobile {
+  flex: 0 0 auto;
+}
+
+.logo-mobile img {
+  max-height: 45px;
+}
+
+/* Botones Mobile - Fila superior */
+.mobile-buttons-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.contact-btn-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  font-size: 0;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+.contact-btn-mobile i {
+  font-size: 1.3rem;
+}
+
+.contact-btn-mobile:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-instagram-mobile {
+  background: var(--instagram-gradient);
+}
+
+.btn-whatsapp-mobile {
+  background: var(--whatsapp-gradient);
+}
+
+.btn-payment-mobile {
+  background: var(--payment-gradient);
+}
+
+/* Carrito Mobile - Fila inferior */
+.mobile-cart-row {
+  width: 100%;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.cart-btn-mobile {
+  background: var(--cart-gradient);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: white;
+  font-weight: 600;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.cart-btn-mobile:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cart-btn-mobile i {
+  font-size: 1.2rem;
+}
+
+.badge-cart-mobile {
+  background-color: #dc3545;
+  font-size: 0.7rem;
+  padding: 3px 6px;
+}
+
+/* ===== MEDIA QUERIES ===== */
+
+/* Tablet (768px - 991px) */
+@media (max-width: 991px) {
+  .header-desktop {
+    display: none;
+  }
+
+  .header-mobile {
+    display: block;
+  }
+
+  body {
+    padding-top: 120px;
+  }
+
+  .header-top {
+    padding: 10px 0;
+  }
+}
+
+/* Móvil (≤ 767px) */
+@media (max-width: 767px) {
+  body {
+    padding-top: 110px;
+  }
+
+  .header-top {
+    padding: 8px 0;
+  }
+
+  .logo-mobile img {
+    max-height: 40px;
+  }
+
+  .contact-btn-mobile {
+    width: 42px;
+    height: 42px;
+  }
+
+  .contact-btn-mobile i {
+    font-size: 1.2rem;
+  }
+
+  .cart-btn-mobile {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Móvil pequeño (≤ 480px) */
+@media (max-width: 480px) {
+  body {
+    padding-top: 100px;
+  }
+
+  .mobile-buttons-row {
+    gap: 6px;
+  }
+
+  .contact-btn-mobile {
+    width: 40px;
+    height: 40px;
+  }
+
+  .contact-btn-mobile i {
+    font-size: 1.1rem;
+  }
+
+  .logo-mobile img {
+    max-height: 35px;
+  }
+
+  .cart-btn-mobile {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+}
+
+/* ===== TOOLTIPS MEJORADOS ===== */
+.contact-btn-mobile,
+.cart-btn-mobile {
+  position: relative;
+}
+
+.contact-btn-mobile::after,
+.cart-btn-mobile::after {
+  content: attr(title);
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.contact-btn-mobile:hover::after,
+.cart-btn-mobile:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Para dispositivos táctiles */
+@media (hover: none) {
+  .contact-btn-mobile:active::after,
+  .cart-btn-mobile:active::after {
+    opacity: 1;
+    visibility: visible;
+  }
+}
