@@ -1,9 +1,10 @@
 // ===== SISTEMA DE CARRITO DE COMPRAS - MAGMA FIT HOUSE =====
-// Versión completamente rediseñada - Responsive y optimizada
+// Versión corregida - Sin duplicación de productos
 
 class CarritoManager {
     constructor() {
         this.carrito = this.obtenerCarritoLocalStorage();
+        this.eventListenersConfigurados = false;
         this.init();
     }
 
@@ -19,6 +20,8 @@ class CarritoManager {
 
     // Agregar producto al carrito
     agregarProducto(nombre, precio) {
+        console.log('Agregando producto:', nombre, precio); // Debug
+        
         const producto = {
             id: this.generarIdUnico(),
             nombre: nombre,
@@ -174,9 +177,6 @@ class CarritoManager {
             // Abrir WhatsApp
             window.open(url, '_blank');
             
-            // Opcional: vaciar carrito después de enviar
-            // this.vaciarCarrito();
-            
         } catch (error) {
             console.error('Error al enviar pedido:', error);
             this.mostrarNotificacion('❌ Error al enviar el pedido', 'error');
@@ -263,10 +263,15 @@ Banco: Lemon
 
     // Mostrar notificaciones
     mostrarNotificacion(mensaje, tipo = 'success') {
+        // Remover notificaciones existentes
+        const notificacionesExistentes = document.querySelectorAll('.alert-notification');
+        notificacionesExistentes.forEach(notif => notif.remove());
+
         // Crear notificación
         const notificacion = document.createElement('div');
-        notificacion.className = `alert alert-${tipo === 'error' ? 'danger' : tipo} alert-dismissible fade show position-fixed`;
+        notificacion.className = `alert alert-${tipo === 'error' ? 'danger' : 'success'} alert-dismissible fade show alert-notification`;
         notificacion.style.cssText = `
+            position: fixed;
             top: 20px;
             right: 20px;
             z-index: 9999;
@@ -317,60 +322,119 @@ Banco: Lemon
 
     // ===== CONFIGURACIÓN DE EVENTOS =====
 
-    // Configurar todos los event listeners
+    // Configurar todos los event listeners (SOLUCIÓN AL PROBLEMA)
     configurarEventListeners() {
-        // Botón enviar pedido
-        const botonEnviar = document.querySelector('.buttonCarrito');
-        if (botonEnviar) {
-            botonEnviar.addEventListener('click', () => this.enviarPedidoWhatsApp());
+        // Prevenir configuración múltiple
+        if (this.eventListenersConfigurados) {
+            console.log('Event listeners ya configurados');
+            return;
         }
 
-        // Botones del carrito (ambas versiones)
+        console.log('Configurando event listeners...');
+
+        // Botón enviar pedido (solo una vez)
+        const botonEnviar = document.querySelector('.buttonCarrito');
+        if (botonEnviar && !botonEnviar.hasAttribute('data-listener-configurado')) {
+            botonEnviar.setAttribute('data-listener-configurado', 'true');
+            botonEnviar.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.enviarPedidoWhatsApp();
+            });
+        }
+
+        // Botones del carrito (solo una vez)
         const botonesCarrito = document.querySelectorAll('.cart-btn-desktop, .cart-btn-mobile');
         botonesCarrito.forEach(boton => {
-            boton.addEventListener('click', () => this.navegarAlCarrito());
-        });
-
-        // Botones de pago
-        const botonesPago = document.querySelectorAll('.btn-payment-desktop, .btn-payment-mobile');
-        botonesPago.forEach(boton => {
-            boton.addEventListener('click', () => this.mostrarInfoPago());
-        });
-
-        // Botón vaciar carrito
-        const botonVaciar = document.querySelector('.btn-vaciar');
-        if (botonVaciar) {
-            botonVaciar.addEventListener('click', () => this.vaciarCarrito());
-        }
-
-        // Eventos globales
-        document.addEventListener('click', (e) => {
-            // Delegación de eventos para botones "Agregar al carrito"
-            if (e.target.closest('.botonAgregarAlCarrito')) {
-                const boton = e.target.closest('.botonAgregarAlCarrito');
-                const nombre = boton.getAttribute('data-nombre') || 
-                             boton.closest('.card')?.querySelector('.card-title')?.textContent || 
-                             'Producto';
-                const precio = parseInt(boton.getAttribute('data-precio')) || 0;
-                
-                if (precio > 0) {
-                    this.agregarProducto(nombre, precio);
-                }
+            if (!boton.hasAttribute('data-listener-configurado')) {
+                boton.setAttribute('data-listener-configurado', 'true');
+                boton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    this.navegarAlCarrito();
+                });
             }
         });
 
+        // Botones de pago (solo una vez)
+        const botonesPago = document.querySelectorAll('.btn-payment-desktop, .btn-payment-mobile');
+        botonesPago.forEach(boton => {
+            if (!boton.hasAttribute('data-listener-configurado')) {
+                boton.setAttribute('data-listener-configurado', 'true');
+                boton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    this.mostrarInfoPago();
+                });
+            }
+        });
+
+        // Botón vaciar carrito (solo una vez)
+        const botonVaciar = document.querySelector('.btn-vaciar');
+        if (botonVaciar && !botonVaciar.hasAttribute('data-listener-configurado')) {
+            botonVaciar.setAttribute('data-listener-configurado', 'true');
+            botonVaciar.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.vaciarCarrito();
+            });
+        }
+
+        // UN SOLO EVENT LISTENER GLOBAL para botones "Agregar al carrito"
+        document.addEventListener('click', (e) => {
+            const boton = e.target.closest('.botonAgregarAlCarrito');
+            if (boton) {
+                e.preventDefault();
+                e.stopPropagation(); // Prevenir múltiples ejecuciones
+                
+                console.log('Botón agregar clickeado'); // Debug
+                
+                // Obtener nombre y precio de los atributos data-
+                let nombre = boton.getAttribute('data-nombre');
+                let precio = parseInt(boton.getAttribute('data-precio'));
+
+                // Si no hay atributos data-, obtener del onclick
+                if (!nombre || !precio) {
+                    const onclick = boton.getAttribute('onclick');
+                    if (onclick) {
+                        const matchNombre = onclick.match(/'([^']+)'/);
+                        const matchPrecio = onclick.match(/, (\d+)\)/);
+                        
+                        nombre = matchNombre ? matchNombre[1] : 'Producto';
+                        precio = matchPrecio ? parseInt(matchPrecio[1]) : 0;
+                    }
+                }
+
+                // Si todavía no tenemos nombre, buscar en el card
+                if (!nombre || nombre === 'Producto') {
+                    const cardTitle = boton.closest('.card')?.querySelector('.card-title');
+                    nombre = cardTitle ? cardTitle.textContent.trim() : 'Producto';
+                }
+
+                if (precio > 0) {
+                    this.agregarProducto(nombre, precio);
+                } else {
+                    console.warn('Precio no válido:', precio);
+                    this.mostrarNotificacion('❌ Error: Precio no válido', 'error');
+                }
+            }
+        }, { once: false }); // IMPORTANTE: once: false para que siga funcionando
+
         // Prevenir envío de formularios
         document.addEventListener('submit', (e) => e.preventDefault());
+
+        this.eventListenersConfigurados = true;
+        console.log('Event listeners configurados correctamente');
     }
 
     // Configurar botones de quitar productos
     configurarBotonesQuitar() {
         const botonesQuitar = document.querySelectorAll('.quitar-producto');
         botonesQuitar.forEach(boton => {
-            boton.addEventListener('click', (e) => {
-                const indice = parseInt(e.target.closest('.quitar-producto').getAttribute('data-indice'));
-                this.quitarProducto(indice);
-            });
+            if (!boton.hasAttribute('data-listener-configurado')) {
+                boton.setAttribute('data-listener-configurado', 'true');
+                boton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const indice = parseInt(e.target.closest('.quitar-producto').getAttribute('data-indice'));
+                    this.quitarProducto(indice);
+                });
+            }
         });
     }
 
@@ -382,60 +446,65 @@ Banco: Lemon
             botones.forEach(boton => {
                 let tooltipTimer;
                 
-                boton.addEventListener('touchstart', (e) => {
-                    e.preventDefault();
-                    const titulo = boton.getAttribute('title');
+                if (!boton.hasAttribute('data-tooltip-configurado')) {
+                    boton.setAttribute('data-tooltip-configurado', 'true');
                     
-                    if (titulo) {
-                        // Remover tooltip existente
-                        const tooltipExistente = document.querySelector('.mobile-tooltip');
-                        if (tooltipExistente) {
-                            tooltipExistente.remove();
-                        }
+                    boton.addEventListener('touchstart', (e) => {
+                        e.preventDefault();
+                        const titulo = boton.getAttribute('title');
                         
-                        // Crear nuevo tooltip
-                        const tooltip = document.createElement('div');
-                        tooltip.className = 'mobile-tooltip';
-                        tooltip.textContent = titulo;
-                        tooltip.style.cssText = `
-                            position: fixed;
-                            bottom: 80px;
-                            left: 50%;
-                            transform: translateX(-50%);
-                            background: rgba(0, 0, 0, 0.9);
-                            color: white;
-                            padding: 8px 12px;
-                            border-radius: 6px;
-                            font-size: 0.8rem;
-                            white-space: nowrap;
-                            z-index: 9999;
-                            pointer-events: none;
-                        `;
-                        
-                        document.body.appendChild(tooltip);
-                        
-                        // Auto-remover
-                        tooltipTimer = setTimeout(() => {
-                            if (tooltip.parentNode) {
-                                tooltip.remove();
+                        if (titulo) {
+                            // Remover tooltip existente
+                            const tooltipExistente = document.querySelector('.mobile-tooltip');
+                            if (tooltipExistente) {
+                                tooltipExistente.remove();
                             }
-                        }, 2000);
-                    }
-                });
-                
-                boton.addEventListener('touchend', () => {
-                    clearTimeout(tooltipTimer);
-                    const tooltips = document.querySelectorAll('.mobile-tooltip');
-                    tooltips.forEach(tooltip => tooltip.remove());
-                });
+                            
+                            // Crear nuevo tooltip
+                            const tooltip = document.createElement('div');
+                            tooltip.className = 'mobile-tooltip';
+                            tooltip.textContent = titulo;
+                            tooltip.style.cssText = `
+                                position: fixed;
+                                bottom: 80px;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                background: rgba(0, 0, 0, 0.9);
+                                color: white;
+                                padding: 8px 12px;
+                                border-radius: 6px;
+                                font-size: 0.8rem;
+                                white-space: nowrap;
+                                z-index: 9999;
+                                pointer-events: none;
+                            `;
+                            
+                            document.body.appendChild(tooltip);
+                            
+                            // Auto-remover
+                            tooltipTimer = setTimeout(() => {
+                                if (tooltip.parentNode) {
+                                    tooltip.remove();
+                                }
+                            }, 2000);
+                        }
+                    });
+                    
+                    boton.addEventListener('touchend', () => {
+                        clearTimeout(tooltipTimer);
+                        const tooltips = document.querySelectorAll('.mobile-tooltip');
+                        tooltips.forEach(tooltip => tooltip.remove());
+                    });
+                }
             });
         }
     }
 
     // ===== MÉTODOS PÚBLICOS PARA HTML =====
 
-    // Método para usar desde onclick en HTML
+    // Método para usar desde onclick en HTML (SOLUCIÓN DIRECTA)
     agregarAlCarrito(nombre, precio) {
+        console.log('Llamado desde onclick:', nombre, precio); // Debug
         this.agregarProducto(nombre, precio);
     }
 }
@@ -447,16 +516,20 @@ let carritoManager;
 
 // Inicializar cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('Inicializando CarritoManager...');
     carritoManager = new CarritoManager();
     
-    // Configurar botones existentes en el HTML
+    // Configurar atributos data- en botones existentes (OPCIONAL)
     document.querySelectorAll('.botonAgregarAlCarrito').forEach(boton => {
-        const nombre = boton.getAttribute('onclick')?.match(/'([^']+)'/)?.[1] || 'Producto';
-        const precio = parseInt(boton.getAttribute('onclick')?.match(/, (\d+)\)/)?.[1] || 0);
-        
-        if (nombre && precio) {
-            boton.setAttribute('data-nombre', nombre);
-            boton.setAttribute('data-precio', precio);
+        const onclick = boton.getAttribute('onclick');
+        if (onclick) {
+            const matchNombre = onclick.match(/'([^']+)'/);
+            const matchPrecio = onclick.match(/, (\d+)\)/);
+            
+            if (matchNombre && matchPrecio) {
+                boton.setAttribute('data-nombre', matchNombre[1]);
+                boton.setAttribute('data-precio', matchPrecio[1]);
+            }
         }
     });
 });
@@ -465,8 +538,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Mantener compatibilidad con código existente
 function agregarAlCarrito(nombre, precio) {
+    console.log('Función global llamada:', nombre, precio); // Debug
     if (carritoManager) {
         carritoManager.agregarAlCarrito(nombre, precio);
+    } else {
+        console.error('CarritoManager no inicializado');
     }
 }
 
@@ -482,7 +558,7 @@ function quitarDelCarrito(indice) {
     }
 }
 
-// Exportar para uso global (si es necesario)
+// Exportar para uso global
 window.CarritoManager = CarritoManager;
 window.agregarAlCarrito = agregarAlCarrito;
 window.vaciarCarrito = vaciarCarrito;
