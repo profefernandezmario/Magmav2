@@ -695,7 +695,7 @@ body {
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   .contact-btn {
     flex: 0 0 30%;
     margin-bottom: 0;
