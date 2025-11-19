@@ -1090,3 +1090,7 @@ img[src*="promo.svg"] {
     height: 50px !important;
     margin: 10px auto !important;
 }
+
+li {
+  list-style-type:  none;
+}
